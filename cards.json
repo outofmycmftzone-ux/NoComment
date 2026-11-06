@@ -3,73 +3,421 @@
     {
       "id": "truth01",
       "levels": {
-        "1": "What's something you pretend to understand but secretly have absolutely no clue about?",
-        "2": "What's the most ridiculous thing you've done because you wanted someone to notice you?",
-        "3": "What's something you've always wanted to try but would be embarrassed to admit?",
-        "4": "What's a secret ambition you'd be genuinely embarrassed if everyone here knew?"
+        "1": "What’s the most embarrassing thing you’ve ever done while drunk?",
+        "2": "What’s the most embarrassing thing you’ve ever done while drunk?",
+        "3": "What’s the most embarrassing thing you’ve ever done while drunk?",
+        "4": "What’s the most embarrassing thing you’ve ever done while drunk?"
       }
     },
     {
       "id": "truth02",
       "levels": {
-        "1": "What's your most irrational fear?",
-        "2": "What's the strangest thing you've caught yourself doing when you thought nobody was watching?",
-        "3": "What's the most embarrassing thing you've done while trying to look confident?",
-        "4": "What's something you've done that you would absolutely never want captured on video?"
+        "1": "Have you ever had a crush on someone in this room? (You don’t have to say who.)",
+        "2": "Have you ever had a crush on someone in this room? (You don’t have to say who.)",
+        "3": "Have you ever had a crush on someone in this room? (You don’t have to say who.)",
+        "4": "Have you ever had a crush on someone in this room? (You don’t have to say who.)"
       }
     },
     {
       "id": "truth03",
       "levels": {
-        "1": "What's an unusual thing you find attractive?",
-        "2": "What's the cheesiest thing that would actually make you blush?",
-        "3": "What's a fantasy date you've imagined but never admitted out loud?",
-        "4": "What's something you'd love someone to do for you but would be far too embarrassed to ask?"
+        "1": "What’s the biggest lie you’ve ever told to get out of plans?",
+        "2": "What’s the biggest lie you’ve ever told to get out of plans?",
+        "3": "What’s the biggest lie you’ve ever told to get out of plans?",
+        "4": "What’s the biggest lie you’ve ever told to get out of plans?"
       }
     },
     {
       "id": "truth04",
       "levels": {
-        "1": "What's the weirdest thing you've searched online?",
-        "2": "What's one thing on your phone you'd rather explain than show?",
-        "3": "If your last ten searches were read aloud, how uncomfortable would you be?",
-        "4": "What's the most questionable rabbit hole you've ever gone down online?"
+        "1": "What’s something you’ve done that would shock your parents if they found out?",
+        "2": "What’s something you’ve done that would shock your parents if they found out?",
+        "3": "What’s something you’ve done that would shock your parents if they found out?",
+        "4": "What’s something you’ve done that would shock your parents if they found out?"
       }
     },
     {
       "id": "truth05",
       "levels": {
-        "1": "What's a ridiculous lie you've told to get out of doing something?",
-        "2": "What's the most awkward situation you've accidentally created for yourself?",
-        "3": "What's something you've gotten away with that still makes you nervous?",
-        "4": "What's the boldest thing you've ever done on impulse?"
+        "1": "Have you ever stalked an ex’s social media longer than you’d admit?",
+        "2": "Have you ever stalked an ex’s social media longer than you’d admit?",
+        "3": "Have you ever stalked an ex’s social media longer than you’d admit?",
+        "4": "Have you ever stalked an ex’s social media longer than you’d admit?"
       }
     },
     {
       "id": "truth06",
       "levels": {
-        "1": "What's a guilty pleasure you rarely admit to?",
-        "2": "What's something you enjoy that doesn't match the image you give people?",
-        "3": "What's something you secretly wish people would compliment you on?",
-        "4": "What's one thing about yourself you work surprisingly hard to hide?"
+        "1": "What’s the most awkward place you’ve ever been turned on?",
+        "2": "What’s the most awkward place you’ve ever been turned on?",
+        "3": "What’s the most awkward place you’ve ever been turned on?",
+        "4": "What’s the most awkward place you’ve ever been turned on?"
       }
     },
     {
+      "id": "truth07",
+      "levels": {
+        "1": "What’s a secret talent you have that nobody here knows about?",
+        "2": "What’s a secret talent you have that nobody here knows about?",
+        "3": "What’s a secret talent you have that nobody here knows about?",
+        "4": "What’s a secret talent you have that nobody here knows about?"
+      }
+    },
+    {
+      "id": "truth08",
+      "levels": {
+        "1": "Have you ever pretended to like a gift you actually hated?",
+        "2": "Have you ever pretended to like a gift you actually hated?",
+        "3": "Have you ever pretended to like a gift you actually hated?",
+        "4": "Have you ever pretended to like a gift you actually hated?"
+      }
+    },
+    {
+      "id": "truth09",
+      "levels": {
+        "1": "What’s the weirdest thing you’ve ever googled late at night?",
+        "2": "What’s the weirdest thing you’ve ever googled late at night?",
+        "3": "What’s the weirdest thing you’ve ever googled late at night?",
+        "4": "What’s the weirdest thing you’ve ever googled late at night?"
+      }
+    },
+    {
+      "id": "truth10",
+      "levels": {
+        "1": "Have you ever had a dirty dream about someone currently in this room?",
+        "2": "Have you ever had a dirty dream about someone currently in this room?",
+        "3": "Have you ever had a dirty dream about someone currently in this room?",
+        "4": "Have you ever had a dirty dream about someone currently in this room?"
+      }
+    },
+    {
+      "id": "truth11",
+      "levels": {
+        "1": "What’s the most childish thing you still do in private?",
+        "2": "What’s the most childish thing you still do in private?",
+        "3": "What’s the most childish thing you still do in private?",
+        "4": "What’s the most childish thing you still do in private?"
+      }
+    },
+    {
+      "id": "truth12",
+      "levels": {
+        "1": "Have you ever been caught doing something you really didn’t want to be caught doing?",
+        "2": "Have you ever been caught doing something you really didn’t want to be caught doing?",
+        "3": "Have you ever been caught doing something you really didn’t want to be caught doing?",
+        "4": "Have you ever been caught doing something you really didn’t want to be caught doing?"
+      }
+    },
+    {
+      "id": "truth13",
+      "levels": {
+        "1": "What’s one thing you’re surprisingly bad at but pretend you’re decent at?",
+        "2": "What’s one thing you’re surprisingly bad at but pretend you’re decent at?",
+        "3": "What’s one thing you’re surprisingly bad at but pretend you’re decent at?",
+        "4": "What’s one thing you’re surprisingly bad at but pretend you’re decent at?"
+      }
+    },
+    {
+      "id": "truth14",
+      "levels": {
+        "1": "Have you ever sent a text to the wrong person that made things extremely awkward?",
+        "2": "Have you ever sent a text to the wrong person that made things extremely awkward?",
+        "3": "Have you ever sent a text to the wrong person that made things extremely awkward?",
+        "4": "Have you ever sent a text to the wrong person that made things extremely awkward?"
+      }
+    },
+    {
+      "id": "truth15",
+      "levels": {
+        "1": "What’s the most embarrassing song on your playlist that you actually like?",
+        "2": "What’s the most embarrassing song on your playlist that you actually like?",
+        "3": "What’s the most embarrassing song on your playlist that you actually like?",
+        "4": "What’s the most embarrassing song on your playlist that you actually like?"
+      }
+    },    {
+      "id": "truth16",
+      "levels": {
+        "1": "What’s the longest you’ve gone without showering and still left the house?",
+        "2": "What’s the longest you’ve gone without showering and still left the house?",
+        "3": "What’s the longest you’ve gone without showering and still left the house?",
+        "4": "What’s the longest you’ve gone without showering and still left the house?"
+      }
+    },
+    {
+      "id": "truth17",
+      "levels": {
+        "1": "Have you ever laughed so hard you peed a little?",
+        "2": "Have you ever laughed so hard you peed a little?",
+        "3": "Have you ever laughed so hard you peed a little?",
+        "4": "Have you ever laughed so hard you peed a little?"
+      }
+    },
+    {
+      "id": "truth18",
+      "levels": {
+        "1": "What’s the dumbest way you’ve ever hurt yourself?",
+        "2": "What’s the dumbest way you’ve ever hurt yourself?",
+        "3": "What’s the dumbest way you’ve ever hurt yourself?",
+        "4": "What’s the dumbest way you’ve ever hurt yourself?"
+      }
+    },
+    {
+      "id": "truth19",
+      "levels": {
+        "1": "Have you ever practiced a conversation in the mirror?",
+        "2": "Have you ever practiced a conversation in the mirror?",
+        "3": "Have you ever practiced a conversation in the mirror?",
+        "4": "Have you ever practiced a conversation in the mirror?"
+      }
+    },
+    {
+      "id": "truth20",
+      "levels": {
+        "1": "What’s a guilty pleasure TV show or movie you’d be slightly embarrassed to admit you love?",
+        "2": "What’s a guilty pleasure TV show or movie you’d be slightly embarrassed to admit you love?",
+        "3": "What’s a guilty pleasure TV show or movie you’d be slightly embarrassed to admit you love?",
+        "4": "What’s a guilty pleasure TV show or movie you’d be slightly embarrassed to admit you love?"
+      }
+    },
+    {
+      "id": "truth21",
+      "levels": {
+        "1": "Have you ever pretended to know a song’s lyrics and completely butchered them?",
+        "2": "Have you ever pretended to know a song’s lyrics and completely butchered them?",
+        "3": "Have you ever pretended to know a song’s lyrics and completely butchered them?",
+        "4": "Have you ever pretended to know a song’s lyrics and completely butchered them?"
+      }
+    },
+    {
+      "id": "truth22",
+      "levels": {
+        "1": "What’s the most unflattering photo of yourself that still exists somewhere?",
+        "2": "What’s the most unflattering photo of yourself that still exists somewhere?",
+        "3": "What’s the most unflattering photo of yourself that still exists somewhere?",
+        "4": "What’s the most unflattering photo of yourself that still exists somewhere?"
+      }
+    },
+    {
+      "id": "truth23",
+      "levels": {
+        "1": "Have you ever cried during a movie that wasn’t supposed to be sad?",
+        "2": "Have you ever cried during a movie that wasn’t supposed to be sad?",
+        "3": "Have you ever cried during a movie that wasn’t supposed to be sad?",
+        "4": "Have you ever cried during a movie that wasn’t supposed to be sad?"
+      }
+    },
+    {
+      "id": "truth24",
+      "levels": {
+        "1": "What’s the weirdest food combination you actually enjoy?",
+        "2": "What’s the weirdest food combination you actually enjoy?",
+        "3": "What’s the weirdest food combination you actually enjoy?",
+        "4": "What’s the weirdest food combination you actually enjoy?"
+      }
+    },
+    {
+      "id": "truth25",
+      "levels": {
+        "1": "Have you ever fallen asleep in a public place and woken up confused?",
+        "2": "Have you ever fallen asleep in a public place and woken up confused?",
+        "3": "Have you ever fallen asleep in a public place and woken up confused?",
+        "4": "Have you ever fallen asleep in a public place and woken up confused?"
+      }
+    },
+    {
+      "id": "truth26",
+      "levels": {
+        "1": "What’s the most expensive thing you’ve ever broken and tried to hide?",
+        "2": "What’s the most expensive thing you’ve ever broken and tried to hide?",
+        "3": "What’s the most expensive thing you’ve ever broken and tried to hide?",
+        "4": "What’s the most expensive thing you’ve ever broken and tried to hide?"
+      }
+    },
+    {
+      "id": "truth27",
+      "levels": {
+        "1": "Have you ever had a crush on a teacher, boss, or someone you shouldn’t have?",
+        "2": "Have you ever had a crush on a teacher, boss, or someone you shouldn’t have?",
+        "3": "Have you ever had a crush on a teacher, boss, or someone you shouldn’t have?",
+        "4": "Have you ever had a crush on a teacher, boss, or someone you shouldn’t have?"
+      }
+    },
+    {
+      "id": "truth28",
+      "levels": {
+        "1": "What’s the most awkward compliment you’ve ever received?",
+        "2": "What’s the most awkward compliment you’ve ever received?",
+        "3": "What’s the most awkward compliment you’ve ever received?",
+        "4": "What’s the most awkward compliment you’ve ever received?"
+      }
+    },
+    {
+      "id": "truth29",
+      "levels": {
+        "1": "Have you ever walked into the wrong bathroom or changing room?",
+        "2": "Have you ever walked into the wrong bathroom or changing room?",
+        "3": "Have you ever walked into the wrong bathroom or changing room?",
+        "4": "Have you ever walked into the wrong bathroom or changing room?"
+      }
+    },
+    {
+      "id": "truth30",
+      "levels": {
+        "1": "What’s a rumor you’ve heard about yourself that was completely wrong?",
+        "2": "What’s a rumor you’ve heard about yourself that was completely wrong?",
+        "3": "What’s a rumor you’ve heard about yourself that was completely wrong?",
+        "4": "What’s a rumor you’ve heard about yourself that was completely wrong?"
+      }
+    },    {
+      "id": "truth31",
+      "levels": {
+        "1": "Have you ever worn the same underwear two days in a row?",
+        "2": "Have you ever worn the same underwear two days in a row?",
+        "3": "Have you ever worn the same underwear two days in a row?",
+        "4": "Have you ever worn the same underwear two days in a row?"
+      }
+    },
+    {
+      "id": "truth32",
+      "levels": {
+        "1": "What’s the most ridiculous thing you’ve done to avoid talking to someone?",
+        "2": "What’s the most ridiculous thing you’ve done to avoid talking to someone?",
+        "3": "What’s the most ridiculous thing you’ve done to avoid talking to someone?",
+        "4": "What’s the most ridiculous thing you’ve done to avoid talking to someone?"
+      }
+    },
+    {
+      "id": "truth33",
+      "levels": {
+        "1": "Have you ever had a wardrobe malfunction in public?",
+        "2": "Have you ever had a wardrobe malfunction in public?",
+        "3": "Have you ever had a wardrobe malfunction in public?",
+        "4": "Have you ever had a wardrobe malfunction in public?"
+      }
+    },
+    {
+      "id": "truth34",
+      "levels": {
+        "1": "What’s the longest you’ve ever gone without washing your hair?",
+        "2": "What’s the longest you’ve ever gone without washing your hair?",
+        "3": "What’s the longest you’ve ever gone without washing your hair?",
+        "4": "What’s the longest you’ve ever gone without washing your hair?"
+      }
+    },
+    {
+      "id": "truth35",
+      "levels": {
+        "1": "Have you ever pretended to be on the phone to avoid someone?",
+        "2": "Have you ever pretended to be on the phone to avoid someone?",
+        "3": "Have you ever pretended to be on the phone to avoid someone?",
+        "4": "Have you ever pretended to be on the phone to avoid someone?"
+      }
+    },
+    {
+      "id": "truth36",
+      "levels": {
+        "1": "What’s the most embarrassing thing in your search history right now?",
+        "2": "What’s the most embarrassing thing in your search history right now?",
+        "3": "What’s the most embarrassing thing in your search history right now?",
+        "4": "What’s the most embarrassing thing in your search history right now?"
+      }
+    },
+    {
+      "id": "truth37",
+      "levels": {
+        "1": "Have you ever danced like no one was watching… and then realized someone was?",
+        "2": "Have you ever danced like no one was watching… and then realized someone was?",
+        "3": "Have you ever danced like no one was watching… and then realized someone was?",
+        "4": "Have you ever danced like no one was watching… and then realized someone was?"
+      }
+    },
+    {
+      "id": "truth38",
+      "levels": {
+        "1": "What’s a skill you claim to have but are actually terrible at?",
+        "2": "What’s a skill you claim to have but are actually terrible at?",
+        "3": "What’s a skill you claim to have but are actually terrible at?",
+        "4": "What’s a skill you claim to have but are actually terrible at?"
+      }
+    },
+    {
+      "id": "truth39",
+      "levels": {
+        "1": "Have you ever sent a risky text and then panicked?",
+        "2": "Have you ever sent a risky text and then panicked?",
+        "3": "Have you ever sent a risky text and then panicked?",
+        "4": "Have you ever sent a risky text and then panicked?"
+      }
+    },
+    {
+      "id": "truth40",
+      "levels": {
+        "1": "What’s the weirdest place you’ve ever fallen asleep?",
+        "2": "What’s the weirdest place you’ve ever fallen asleep?",
+        "3": "What’s the weirdest place you’ve ever fallen asleep?",
+        "4": "What’s the weirdest place you’ve ever fallen asleep?"
+      }
+    },
+    {
+      "id": "truth41",
+      "levels": {
+        "1": "Have you ever had a moment where you thought “I can’t believe I just did that”?",
+        "2": "Have you ever had a moment where you thought “I can’t believe I just did that”?",
+        "3": "Have you ever had a moment where you thought “I can’t believe I just did that”?",
+        "4": "Have you ever had a moment where you thought “I can’t believe I just did that”?"
+      }
+    },
+    {
+      "id": "truth42",
+      "levels": {
+        "1": "What’s the most childish argument you’ve ever been part of?",
+        "2": "What’s the most childish argument you’ve ever been part of?",
+        "3": "What’s the most childish argument you’ve ever been part of?",
+        "4": "What’s the most childish argument you’ve ever been part of?"
+      }
+    },
+    {
+      "id": "truth43",
+      "levels": {
+        "1": "Have you ever kept a souvenir from a one-night situation?",
+        "2": "Have you ever kept a souvenir from a one-night situation?",
+        "3": "Have you ever kept a souvenir from a one-night situation?",
+        "4": "Have you ever kept a souvenir from a one-night situation?"
+      }
+    },
+    {
+      "id": "truth44",
+      "levels": {
+        "1": "What’s the most awkward silent elevator ride you’ve ever experienced?",
+        "2": "What’s the most awkward silent elevator ride you’ve ever experienced?",
+        "3": "What’s the most awkward silent elevator ride you’ve ever experienced?",
+        "4": "What’s the most awkward silent elevator ride you’ve ever experienced?"
+      }
+    },
+    {
+      "id": "truth45",
+      "levels": {
+        "1": "Have you ever practiced your “sexy” face in the mirror?",
+        "2": "Have you ever practiced your “sexy” face in the mirror?",
+        "3": "Have you ever practiced your “sexy” face in the mirror?",
+        "4": "Have you ever practiced your “sexy” face in the mirror?"
+      }
+    },    {
       "id": "truth_reward01",
       "levels": {
-        "1": "🎁 REWARD CARD: Skip your next turn. Keep this card until you use it.",
-        "2": "🎁 REWARD CARD: Skip your next turn. Keep this card until you use it.",
-        "3": "🎁 REWARD CARD: Skip your next turn. Keep this card until you use it.",
-        "4": "🎁 REWARD CARD: Skip your next turn. Keep this card until you use it."
+        "1": "REWARD: Skip your next turn.",
+        "2": "REWARD: Skip your next turn.",
+        "3": "REWARD: Skip your next turn.",
+        "4": "REWARD: Skip your next turn."
       }
     },
     {
       "id": "truth_reward02",
       "levels": {
-        "1": "🎁 REWARD CARD: Give your next turn to any player of your choice.",
-        "2": "🎁 REWARD CARD: Give your next turn to any player of your choice.",
-        "3": "🎁 REWARD CARD: Give your next turn to any player of your choice.",
-        "4": "🎁 REWARD CARD: Give your next turn to any player of your choice."
+        "1": "REWARD: Give your next turn to another player.",
+        "2": "REWARD: Give your next turn to another player.",
+        "3": "REWARD: Give your next turn to another player.",
+        "4": "REWARD: Give your next turn to another player."
       }
     }
   ],
@@ -77,244 +425,1191 @@
     {
       "id": "dare01",
       "levels": {
-        "1": "Give a completely serious 20-second sales pitch for an ordinary household object.",
-        "2": "Deliver your best seductive movie-trailer voice while describing making a sandwich.",
-        "3": "Maintain intense eye contact with the group while giving a dramatic speech about your greatest talent.",
-        "4": "Give the person beside you your most convincing fictional marriage proposal. Make it unforgettable."
+        "1": "Take one player into another room and flash them for 3 seconds (boobs/chest only).",
+        "2": "Take one player into another room and flash them for 3 seconds (boobs/chest only).",
+        "3": "Take one player into another room and flash them for 3 seconds (boobs/chest only).",
+        "4": "Take one player into another room and flash them for 3 seconds (boobs/chest only)."
       }
     },
     {
       "id": "dare02",
       "levels": {
-        "1": "Do your best impression of someone trying very hard to look cool.",
-        "2": "Demonstrate your most ridiculous attempt at flirting without saying a word.",
-        "3": "Give the group a 30-second demonstration of how you think you look when you're trying to be attractive.",
-        "4": "Pick an ordinary object and flirt with it as though it's the love of your life."
+        "1": "Let the group choose a player. Whisper the most ridiculous compliment you can think of in their ear.",
+        "2": "Let the group choose a player. Whisper the most ridiculous compliment you can think of in their ear.",
+        "3": "Let the group choose a player. Whisper the most ridiculous compliment you can think of in their ear.",
+        "4": "Let the group choose a player. Whisper the most ridiculous compliment you can think of in their ear."
       }
     },
     {
       "id": "dare03",
       "levels": {
-        "1": "Speak in a dramatic accent until your next turn.",
-        "2": "Give a fake acceptance speech for an award nobody would ever give you.",
-        "3": "Re-enact the most embarrassing way someone could walk into a room.",
-        "4": "Perform a dramatic breakup scene with an imaginary partner. Go completely over the top."
+        "1": "Do your best dramatic fake cry for 20 seconds.",
+        "2": "Do your best dramatic fake cry for 20 seconds.",
+        "3": "Do your best dramatic fake cry for 20 seconds.",
+        "4": "Do your best dramatic fake cry for 20 seconds."
       }
     },
     {
       "id": "dare04",
       "levels": {
-        "1": "Let the group choose a harmless nickname for you until your next turn.",
-        "2": "Give someone in the group a ridiculous but convincing compliment.",
-        "3": "Do your best impression of yourself after three hours of trying to impress someone.",
-        "4": "Deliver a completely serious confession of love to a chair, cushion, or other nearby object."
+        "1": "Let someone draw a silly mustache or temporary tattoo on your face with a marker.",
+        "2": "Let someone draw a silly mustache or temporary tattoo on your face with a marker.",
+        "3": "Let someone draw a silly mustache or temporary tattoo on your face with a marker.",
+        "4": "Let someone draw a silly mustache or temporary tattoo on your face with a marker."
       }
     },
     {
       "id": "dare05",
       "levels": {
-        "1": "Show the group your most ridiculous dance move.",
-        "2": "Perform a slow-motion entrance as though you're the most important person in the room.",
-        "3": "Give a one-minute demonstration of your imaginary signature move.",
-        "4": "Perform a dramatic, exaggerated version of how you think you look when you're flirting."
+        "1": "Send a voice note to someone not in the room telling them a completely made-up dramatic story about your night (you don’t have to actually send it).",
+        "2": "Send a voice note to someone not in the room telling them a completely made-up dramatic story about your night (you don’t have to actually send it).",
+        "3": "Send a voice note to someone not in the room telling them a completely made-up dramatic story about your night (you don’t have to actually send it).",
+        "4": "Send a voice note to someone not in the room telling them a completely made-up dramatic story about your night (you don’t have to actually send it)."
       }
     },
     {
       "id": "dare06",
       "levels": {
-        "1": "Speak only in questions until your next turn.",
-        "2": "Let the group give you a ridiculous title. Introduce yourself using it three times.",
-        "3": "Make up a scandalous-sounding story about yourself that is obviously fictional.",
-        "4": "Deliver a public apology to the room for a completely imaginary scandal. Do not break character."
+        "1": "Put an ice cube down the back of your shirt and leave it there for 45 seconds.",
+        "2": "Put an ice cube down the back of your shirt and leave it there for 45 seconds.",
+        "3": "Put an ice cube down the back of your shirt and leave it there for 45 seconds.",
+        "4": "Put an ice cube down the back of your shirt and leave it there for 45 seconds."
+      }
+    },
+    {
+      "id": "dare07",
+      "levels": {
+        "1": "Give the person two seats away a 15-second shoulder massage while maintaining intense eye contact.",
+        "2": "Give the person two seats away a 15-second shoulder massage while maintaining intense eye contact.",
+        "3": "Give the person two seats away a 15-second shoulder massage while maintaining intense eye contact.",
+        "4": "Give the person two seats away a 15-second shoulder massage while maintaining intense eye contact."
+      }
+    },
+    {
+      "id": "dare08",
+      "levels": {
+        "1": "Take your shoes and socks off and keep them off until your next turn.",
+        "2": "Take your shoes and socks off and keep them off until your next turn.",
+        "3": "Take your shoes and socks off and keep them off until your next turn.",
+        "4": "Take your shoes and socks off and keep them off until your next turn."
+      }
+    },
+    {
+      "id": "dare09",
+      "levels": {
+        "1": "Let the group pick a song and freestyle a terrible rap about the person on your left.",
+        "2": "Let the group pick a song and freestyle a terrible rap about the person on your left.",
+        "3": "Let the group pick a song and freestyle a terrible rap about the person on your left.",
+        "4": "Let the group pick a song and freestyle a terrible rap about the person on your left."
+      }
+    },
+    {
+      "id": "dare10",
+      "levels": {
+        "1": "Whisper your most embarrassing childhood memory to the person on your right.",
+        "2": "Whisper your most embarrassing childhood memory to the person on your right.",
+        "3": "Whisper your most embarrassing childhood memory to the person on your right.",
+        "4": "Whisper your most embarrassing childhood memory to the person on your right."
+      }
+    },
+    {
+      "id": "dare11",
+      "levels": {
+        "1": "Let someone write a one-word nickname on your forehead and leave it for the rest of the game.",
+        "2": "Let someone write a one-word nickname on your forehead and leave it for the rest of the game.",
+        "3": "Let someone write a one-word nickname on your forehead and leave it for the rest of the game.",
+        "4": "Let someone write a one-word nickname on your forehead and leave it for the rest of the game."
+      }
+    },
+    {
+      "id": "dare12",
+      "levels": {
+        "1": "Do your best impression of another player for 30 seconds.",
+        "2": "Do your best impression of another player for 30 seconds.",
+        "3": "Do your best impression of another player for 30 seconds.",
+        "4": "Do your best impression of another player for 30 seconds."
+      }
+    },
+    {
+      "id": "dare13",
+      "levels": {
+        "1": "Let the group choose who gets to lightly slap your ass once.",
+        "2": "Let the group choose who gets to lightly slap your ass once.",
+        "3": "Let the group choose who gets to lightly slap your ass once.",
+        "4": "Let the group choose who gets to lightly slap your ass once."
+      }
+    },
+    {
+      "id": "dare14",
+      "levels": {
+        "1": "Take a player to the doorway and give them a 10-second dramatic “movie goodbye” hug.",
+        "2": "Take a player to the doorway and give them a 10-second dramatic “movie goodbye” hug.",
+        "3": "Take a player to the doorway and give them a 10-second dramatic “movie goodbye” hug.",
+        "4": "Take a player to the doorway and give them a 10-second dramatic “movie goodbye” hug."
+      }
+    },
+    {
+      "id": "dare15",
+      "levels": {
+        "1": "Keep one hand on the person next to you’s knee for the next full round.",
+        "2": "Keep one hand on the person next to you’s knee for the next full round.",
+        "3": "Keep one hand on the person next to you’s knee for the next full round.",
+        "4": "Keep one hand on the person next to you’s knee for the next full round."
+      }
+    },    {
+      "id": "dare31",
+      "levels": {
+        "1": "Let someone adjust your clothes in a deliberately awkward way.",
+        "2": "Let someone adjust your clothes in a deliberately awkward way.",
+        "3": "Let someone adjust your clothes in a deliberately awkward way.",
+        "4": "Let someone adjust your clothes in a deliberately awkward way."
+      }
+    },
+    {
+      "id": "dare32",
+      "levels": {
+        "1": "Sing the chorus of a song the group chooses as seductively as possible.",
+        "2": "Sing the chorus of a song the group chooses as seductively as possible.",
+        "3": "Sing the chorus of a song the group chooses as seductively as possible.",
+        "4": "Sing the chorus of a song the group chooses as seductively as possible."
+      }
+    },
+    {
+      "id": "dare33",
+      "levels": {
+        "1": "Let the group decide which player you have to give a 15-second back massage to.",
+        "2": "Let the group decide which player you have to give a 15-second back massage to.",
+        "3": "Let the group decide which player you have to give a 15-second back massage to.",
+        "4": "Let the group decide which player you have to give a 15-second back massage to."
+      }
+    },
+    {
+      "id": "dare34",
+      "levels": {
+        "1": "Keep your eyes closed for the next two turns and only open them when someone says your name.",
+        "2": "Keep your eyes closed for the next two turns and only open them when someone says your name.",
+        "3": "Keep your eyes closed for the next two turns and only open them when someone says your name.",
+        "4": "Keep your eyes closed for the next two turns and only open them when someone says your name."
+      }
+    },
+    {
+      "id": "dare35",
+      "levels": {
+        "1": "Let someone put lipstick or chapstick on you (even if you’re not into it).",
+        "2": "Let someone put lipstick or chapstick on you (even if you’re not into it).",
+        "3": "Let someone put lipstick or chapstick on you (even if you’re not into it).",
+        "4": "Let someone put lipstick or chapstick on you (even if you’re not into it)."
+      }
+    },
+    {
+      "id": "dare36",
+      "levels": {
+        "1": "Do your best impression of a dramatic soap-opera breakup scene with a player of the group’s choice.",
+        "2": "Do your best impression of a dramatic soap-opera breakup scene with a player of the group’s choice.",
+        "3": "Do your best impression of a dramatic soap-opera breakup scene with a player of the group’s choice.",
+        "4": "Do your best impression of a dramatic soap-opera breakup scene with a player of the group’s choice."
+      }
+    },
+    {
+      "id": "dare37",
+      "levels": {
+        "1": "Let the group choose a player. Sit on their lap until your next turn.",
+        "2": "Let the group choose a player. Sit on their lap until your next turn.",
+        "3": "Let the group choose a player. Sit on their lap until your next turn.",
+        "4": "Let the group choose a player. Sit on their lap until your next turn."
+      }
+    },
+    {
+      "id": "dare38",
+      "levels": {
+        "1": "Take off your outermost layer and wear it inside-out for the rest of the round.",
+        "2": "Take off your outermost layer and wear it inside-out for the rest of the round.",
+        "3": "Take off your outermost layer and wear it inside-out for the rest of the round.",
+        "4": "Take off your outermost layer and wear it inside-out for the rest of the round."
+      }
+    },
+    {
+      "id": "dare39",
+      "levels": {
+        "1": "Let someone tickle you for 15 seconds (you can’t fight back).",
+        "2": "Let someone tickle you for 15 seconds (you can’t fight back).",
+        "3": "Let someone tickle you for 15 seconds (you can’t fight back).",
+        "4": "Let someone tickle you for 15 seconds (you can’t fight back)."
+      }
+    },
+    {
+      "id": "dare40",
+      "levels": {
+        "1": "Whisper the dirtiest PG-13 thing you can think of to the person across from you.",
+        "2": "Whisper the dirtiest PG-13 thing you can think of to the person across from you.",
+        "3": "Whisper the dirtiest PG-13 thing you can think of to the person across from you.",
+        "4": "Whisper the dirtiest PG-13 thing you can think of to the person across from you."
+      }
+    },
+    {
+      "id": "dare41",
+      "levels": {
+        "1": "Let the group vote on a silly dare for you to do right now (within reason).",
+        "2": "Let the group vote on a silly dare for you to do right now (within reason).",
+        "3": "Let the group vote on a silly dare for you to do right now (within reason).",
+        "4": "Let the group vote on a silly dare for you to do right now (within reason)."
+      }
+    },
+    {
+      "id": "dare42",
+      "levels": {
+        "1": "Give every player a different ridiculous nickname and use only those names for the next round.",
+        "2": "Give every player a different ridiculous nickname and use only those names for the next round.",
+        "3": "Give every player a different ridiculous nickname and use only those names for the next round.",
+        "4": "Give every player a different ridiculous nickname and use only those names for the next round."
+      }
+    },
+    {
+      "id": "dare43",
+      "levels": {
+        "1": "Let someone draw freckles or a temporary beauty mark on your face.",
+        "2": "Let someone draw freckles or a temporary beauty mark on your face.",
+        "3": "Let someone draw freckles or a temporary beauty mark on your face.",
+        "4": "Let someone draw freckles or a temporary beauty mark on your face."
+      }
+    },
+    {
+      "id": "dare44",
+      "levels": {
+        "1": "Take a player into another room and tell them one genuine compliment and one teasing one.",
+        "2": "Take a player into another room and tell them one genuine compliment and one teasing one.",
+        "3": "Take a player into another room and tell them one genuine compliment and one teasing one.",
+        "4": "Take a player into another room and tell them one genuine compliment and one teasing one."
+      }
+    },
+    {
+      "id": "dare45",
+      "levels": {
+        "1": "Stay in whatever “punishment” pose the group invents for 30 seconds.",
+        "2": "Stay in whatever “punishment” pose the group invents for 30 seconds.",
+        "3": "Stay in whatever “punishment” pose the group invents for 30 seconds.",
+        "4": "Stay in whatever “punishment” pose the group invents for 30 seconds."
       }
     },
     {
       "id": "dare_reward01",
       "levels": {
-        "1": "🎁 REWARD CARD: Choose one player to take your next turn for you.",
-        "2": "🎁 REWARD CARD: Choose one player to take your next turn for you.",
-        "3": "🎁 REWARD CARD: Choose one player to take your next turn for you.",
-        "4": "🎁 REWARD CARD: Choose one player to take your next turn for you."
+        "1": "REWARD: Choose another player to take your next turn for you.",
+        "2": "REWARD: Choose another player to take your next turn for you.",
+        "3": "REWARD: Choose another player to take your next turn for you.",
+        "4": "REWARD: Choose another player to take your next turn for you."
       }
     },
     {
       "id": "dare_reward02",
       "levels": {
-        "1": "🎁 REWARD CARD: Cancel one punishment card. Keep this card until you need it.",
-        "2": "🎁 REWARD CARD: Cancel one punishment card. Keep this card until you need it.",
-        "3": "🎁 REWARD CARD: Cancel one punishment card. Keep this card until you need it.",
-        "4": "🎁 REWARD CARD: Cancel one punishment card. Keep this card until you need it."
+        "1": "REWARD: You may pass on one dare later in the game.",
+        "2": "REWARD: You may pass on one dare later in the game.",
+        "3": "REWARD: You may pass on one dare later in the game.",
+        "4": "REWARD: You may pass on one dare later in the game."
       }
     }
   ],
-  "confession": [
-    {
+  "confession": [    {
       "id": "confession01",
       "levels": {
-        "1": "Confess to a completely harmless habit you know is weird.",
-        "2": "Confess to something you do when you're alone that you'd never do in public.",
-        "3": "Confess to a time you acted confident while internally panicking.",
-        "4": "Confess to something you've wanted to do for years but haven't had the nerve to try."
+        "1": "What’s something you’ve done recently that you still feel a little guilty about?",
+        "2": "What’s something you’ve done recently that you still feel a little guilty about?",
+        "3": "What’s something you’ve done recently that you still feel a little guilty about?",
+        "4": "What’s something you’ve done recently that you still feel a little guilty about?"
       }
     },
     {
       "id": "confession02",
       "levels": {
-        "1": "Confess to the most childish thing you still enjoy.",
-        "2": "Confess to a ridiculous excuse you've used to avoid plans.",
-        "3": "Confess to something you've pretended not to care about but actually cared about a lot.",
-        "4": "Confess to the most impulsive decision you've seriously considered making."
+        "1": "Have you ever had an inappropriate thought about someone in this room tonight?",
+        "2": "Have you ever had an inappropriate thought about someone in this room tonight?",
+        "3": "Have you ever had an inappropriate thought about someone in this room tonight?",
+        "4": "Have you ever had an inappropriate thought about someone in this room tonight?"
       }
     },
     {
       "id": "confession03",
       "levels": {
-        "1": "Confess to a habit you have that makes absolutely no sense.",
-        "2": "Confess to something you've rehearsed saying in your head but never actually said.",
-        "3": "Confess to a moment when you completely embarrassed yourself trying to impress someone.",
-        "4": "Confess to something you'd do if you had absolutely no fear of looking ridiculous."
+        "1": "What’s a small secret you’ve kept from most of your friends that still feels dumb?",
+        "2": "What’s a small secret you’ve kept from most of your friends that still feels dumb?",
+        "3": "What’s a small secret you’ve kept from most of your friends that still feels dumb?",
+        "4": "What’s a small secret you’ve kept from most of your friends that still feels dumb?"
       }
     },
     {
       "id": "confession04",
       "levels": {
-        "1": "Confess to a song you secretly love but would never put on the speaker.",
-        "2": "Confess to an unusual thing that instantly puts you in a good mood.",
-        "3": "Confess to a ridiculous fantasy version of your future life.",
-        "4": "Confess to the most outrageous thing on your personal bucket list."
+        "1": "Have you ever pretended to be busier than you actually are just to avoid plans?",
+        "2": "Have you ever pretended to be busier than you actually are just to avoid plans?",
+        "3": "Have you ever pretended to be busier than you actually are just to avoid plans?",
+        "4": "Have you ever pretended to be busier than you actually are just to avoid plans?"
       }
     },
     {
       "id": "confession05",
       "levels": {
-        "1": "Confess to something you bought that you absolutely did not need.",
-        "2": "Confess to a time you were caught doing something embarrassing.",
-        "3": "Confess to a time you got caught in a lie and tried to talk your way out of it.",
-        "4": "Confess to a moment when you wished the ground would swallow you whole."
+        "1": "Is there someone here you’d feel nervous being alone with for too long?",
+        "2": "Is there someone here you’d feel nervous being alone with for too long?",
+        "3": "Is there someone here you’d feel nervous being alone with for too long?",
+        "4": "Is there someone here you’d feel nervous being alone with for too long?"
       }
     },
     {
       "id": "confession06",
       "levels": {
-        "1": "Confess to a ridiculous thing that makes you feel confident.",
-        "2": "Confess to something you secretly think you're better at than you actually are.",
-        "3": "Confess to something you wish you had the confidence to do in front of everyone.",
-        "4": "Confess to the most outrageous version of yourself you sometimes imagine becoming."
+        "1": "Have you ever looked someone in this room up online out of pure curiosity?",
+        "2": "Have you ever looked someone in this room up online out of pure curiosity?",
+        "3": "Have you ever looked someone in this room up online out of pure curiosity?",
+        "4": "Have you ever looked someone in this room up online out of pure curiosity?"
+      }
+    },
+    {
+      "id": "confession07",
+      "levels": {
+        "1": "What’s something you’ve laughed at that you didn’t actually understand?",
+        "2": "What’s something you’ve laughed at that you didn’t actually understand?",
+        "3": "What’s something you’ve laughed at that you didn’t actually understand?",
+        "4": "What’s something you’ve laughed at that you didn’t actually understand?"
+      }
+    },
+    {
+      "id": "confession08",
+      "levels": {
+        "1": "Have you ever had a moment where you thought about kissing someone you probably shouldn’t have?",
+        "2": "Have you ever had a moment where you thought about kissing someone you probably shouldn’t have?",
+        "3": "Have you ever had a moment where you thought about kissing someone you probably shouldn’t have?",
+        "4": "Have you ever had a moment where you thought about kissing someone you probably shouldn’t have?"
+      }
+    },
+    {
+      "id": "confession09",
+      "levels": {
+        "1": "What’s something you’ve said was “fine” when it really wasn’t?",
+        "2": "What’s something you’ve said was “fine” when it really wasn’t?",
+        "3": "What’s something you’ve said was “fine” when it really wasn’t?",
+        "4": "What’s something you’ve said was “fine” when it really wasn’t?"
+      }
+    },
+    {
+      "id": "confession10",
+      "levels": {
+        "1": "Have you ever fantasized about a dramatically different version of your life?",
+        "2": "Have you ever fantasized about a dramatically different version of your life?",
+        "3": "Have you ever fantasized about a dramatically different version of your life?",
+        "4": "Have you ever fantasized about a dramatically different version of your life?"
+      }
+    },
+    {
+      "id": "confession11",
+      "levels": {
+        "1": "Have you ever been more attracted to someone after seeing them do something completely ordinary?",
+        "2": "Have you ever been more attracted to someone after seeing them do something completely ordinary?",
+        "3": "Have you ever been more attracted to someone after seeing them do something completely ordinary?",
+        "4": "Have you ever been more attracted to someone after seeing them do something completely ordinary?"
+      }
+    },
+    {
+      "id": "confession12",
+      "levels": {
+        "1": "What’s an argument you’ve practiced in the shower or in your head?",
+        "2": "What’s an argument you’ve practiced in the shower or in your head?",
+        "3": "What’s an argument you’ve practiced in the shower or in your head?",
+        "4": "What’s an argument you’ve practiced in the shower or in your head?"
+      }
+    },
+    {
+      "id": "confession13",
+      "levels": {
+        "1": "Have you ever felt a little jealous of someone in this room?",
+        "2": "Have you ever felt a little jealous of someone in this room?",
+        "3": "Have you ever felt a little jealous of someone in this room?",
+        "4": "Have you ever felt a little jealous of someone in this room?"
+      }
+    },
+    {
+      "id": "confession14",
+      "levels": {
+        "1": "What’s something impulsive you’ve done and immediately regretted?",
+        "2": "What’s something impulsive you’ve done and immediately regretted?",
+        "3": "What’s something impulsive you’ve done and immediately regretted?",
+        "4": "What’s something impulsive you’ve done and immediately regretted?"
+      }
+    },
+    {
+      "id": "confession15",
+      "levels": {
+        "1": "Have you ever had a crush that lasted way longer than it should have?",
+        "2": "Have you ever had a crush that lasted way longer than it should have?",
+        "3": "Have you ever had a crush that lasted way longer than it should have?",
+        "4": "Have you ever had a crush that lasted way longer than it should have?"
+      }
+    },    {
+      "id": "confession16",
+      "levels": {
+        "1": "What’s a white lie you’ve told that snowballed into something bigger?",
+        "2": "What’s a white lie you’ve told that snowballed into something bigger?",
+        "3": "What’s a white lie you’ve told that snowballed into something bigger?",
+        "4": "What’s a white lie you’ve told that snowballed into something bigger?"
+      }
+    },
+    {
+      "id": "confession17",
+      "levels": {
+        "1": "Have you ever stayed up way too late doing something completely pointless?",
+        "2": "Have you ever stayed up way too late doing something completely pointless?",
+        "3": "Have you ever stayed up way too late doing something completely pointless?",
+        "4": "Have you ever stayed up way too late doing something completely pointless?"
+      }
+    },
+    {
+      "id": "confession18",
+      "levels": {
+        "1": "What’s something you’ve done in private that you’d be mortified if anyone walked in on?",
+        "2": "What’s something you’ve done in private that you’d be mortified if anyone walked in on?",
+        "3": "What’s something you’ve done in private that you’d be mortified if anyone walked in on?",
+        "4": "What’s something you’ve done in private that you’d be mortified if anyone walked in on?"
+      }
+    },
+    {
+      "id": "confession19",
+      "levels": {
+        "1": "Have you ever pretended to like a song, movie, or show just to fit in?",
+        "2": "Have you ever pretended to like a song, movie, or show just to fit in?",
+        "3": "Have you ever pretended to like a song, movie, or show just to fit in?",
+        "4": "Have you ever pretended to like a song, movie, or show just to fit in?"
+      }
+    },
+    {
+      "id": "confession20",
+      "levels": {
+        "1": "What’s a secret you’ve almost told someone and then backed out at the last second?",
+        "2": "What’s a secret you’ve almost told someone and then backed out at the last second?",
+        "3": "What’s a secret you’ve almost told someone and then backed out at the last second?",
+        "4": "What’s a secret you’ve almost told someone and then backed out at the last second?"
+      }
+    },
+    {
+      "id": "confession21",
+      "levels": {
+        "1": "Have you ever had a dirty dream about someone you know in real life?",
+        "2": "Have you ever had a dirty dream about someone you know in real life?",
+        "3": "Have you ever had a dirty dream about someone you know in real life?",
+        "4": "Have you ever had a dirty dream about someone you know in real life?"
+      }
+    },
+    {
+      "id": "confession22",
+      "levels": {
+        "1": "What’s the most embarrassing thing you’ve ever searched for on the internet?",
+        "2": "What’s the most embarrassing thing you’ve ever searched for on the internet?",
+        "3": "What’s the most embarrassing thing you’ve ever searched for on the internet?",
+        "4": "What’s the most embarrassing thing you’ve ever searched for on the internet?"
+      }
+    },
+    {
+      "id": "confession23",
+      "levels": {
+        "1": "Have you ever kept a text draft you were too nervous to send?",
+        "2": "Have you ever kept a text draft you were too nervous to send?",
+        "3": "Have you ever kept a text draft you were too nervous to send?",
+        "4": "Have you ever kept a text draft you were too nervous to send?"
+      }
+    },
+    {
+      "id": "confession24",
+      "levels": {
+        "1": "What’s something you’ve done to get someone’s attention that you’re slightly ashamed of?",
+        "2": "What’s something you’ve done to get someone’s attention that you’re slightly ashamed of?",
+        "3": "What’s something you’ve done to get someone’s attention that you’re slightly ashamed of?",
+        "4": "What’s something you’ve done to get someone’s attention that you’re slightly ashamed of?"
+      }
+    },
+    {
+      "id": "confession25",
+      "levels": {
+        "1": "Have you ever laughed at your own joke when no one else did?",
+        "2": "Have you ever laughed at your own joke when no one else did?",
+        "3": "Have you ever laughed at your own joke when no one else did?",
+        "4": "Have you ever laughed at your own joke when no one else did?"
+      }
+    },
+    {
+      "id": "confession26",
+      "levels": {
+        "1": "What’s a personal habit you have that you’d rather keep private?",
+        "2": "What’s a personal habit you have that you’d rather keep private?",
+        "3": "What’s a personal habit you have that you’d rather keep private?",
+        "4": "What’s a personal habit you have that you’d rather keep private?"
+      }
+    },
+    {
+      "id": "confession27",
+      "levels": {
+        "1": "Have you ever felt attracted to someone at the worst possible moment?",
+        "2": "Have you ever felt attracted to someone at the worst possible moment?",
+        "3": "Have you ever felt attracted to someone at the worst possible moment?",
+        "4": "Have you ever felt attracted to someone at the worst possible moment?"
+      }
+    },
+    {
+      "id": "confession28",
+      "levels": {
+        "1": "What’s a compliment you’ve received that made you uncomfortably happy?",
+        "2": "What’s a compliment you’ve received that made you uncomfortably happy?",
+        "3": "What’s a compliment you’ve received that made you uncomfortably happy?",
+        "4": "What’s a compliment you’ve received that made you uncomfortably happy?"
+      }
+    },
+    {
+      "id": "confession29",
+      "levels": {
+        "1": "Have you ever rehearsed what you’d say if you ran into an ex?",
+        "2": "Have you ever rehearsed what you’d say if you ran into an ex?",
+        "3": "Have you ever rehearsed what you’d say if you ran into an ex?",
+        "4": "Have you ever rehearsed what you’d say if you ran into an ex?"
+      }
+    },
+    {
+      "id": "confession30",
+      "levels": {
+        "1": "What’s something you’ve done while drunk that you still can’t fully explain?",
+        "2": "What’s something you’ve done while drunk that you still can’t fully explain?",
+        "3": "What’s something you’ve done while drunk that you still can’t fully explain?",
+        "4": "What’s something you’ve done while drunk that you still can’t fully explain?"
+      }
+    },    {
+      "id": "confession31",
+      "levels": {
+        "1": "Have you ever had a moment of pure secondhand embarrassment for yourself?",
+        "2": "Have you ever had a moment of pure secondhand embarrassment for yourself?",
+        "3": "Have you ever had a moment of pure secondhand embarrassment for yourself?",
+        "4": "Have you ever had a moment of pure secondhand embarrassment for yourself?"
+      }
+    },
+    {
+      "id": "confession32",
+      "levels": {
+        "1": "What’s a small rebellion you’ve committed that still makes you smile?",
+        "2": "What’s a small rebellion you’ve committed that still makes you smile?",
+        "3": "What’s a small rebellion you’ve committed that still makes you smile?",
+        "4": "What’s a small rebellion you’ve committed that still makes you smile?"
+      }
+    },
+    {
+      "id": "confession33",
+      "levels": {
+        "1": "Have you ever pretended not to see someone to avoid talking to them?",
+        "2": "Have you ever pretended not to see someone to avoid talking to them?",
+        "3": "Have you ever pretended not to see someone to avoid talking to them?",
+        "4": "Have you ever pretended not to see someone to avoid talking to them?"
+      }
+    },
+    {
+      "id": "confession34",
+      "levels": {
+        "1": "What’s the most awkward sexual thought you’ve had in a completely normal setting?",
+        "2": "What’s the most awkward sexual thought you’ve had in a completely normal setting?",
+        "3": "What’s the most awkward sexual thought you’ve had in a completely normal setting?",
+        "4": "What’s the most awkward sexual thought you’ve had in a completely normal setting?"
+      }
+    },
+    {
+      "id": "confession35",
+      "levels": {
+        "1": "Have you ever kept a souvenir or memento from a situation you probably shouldn’t have?",
+        "2": "Have you ever kept a souvenir or memento from a situation you probably shouldn’t have?",
+        "3": "Have you ever kept a souvenir or memento from a situation you probably shouldn’t have?",
+        "4": "Have you ever kept a souvenir or memento from a situation you probably shouldn’t have?"
+      }
+    },
+    {
+      "id": "confession36",
+      "levels": {
+        "1": "What’s something you’ve told yourself “just this once” about and then repeated?",
+        "2": "What’s something you’ve told yourself “just this once” about and then repeated?",
+        "3": "What’s something you’ve told yourself “just this once” about and then repeated?",
+        "4": "What’s something you’ve told yourself “just this once” about and then repeated?"
+      }
+    },
+    {
+      "id": "confession37",
+      "levels": {
+        "1": "Have you ever felt a sudden, unexpected spark with someone in this room?",
+        "2": "Have you ever felt a sudden, unexpected spark with someone in this room?",
+        "3": "Have you ever felt a sudden, unexpected spark with someone in this room?",
+        "4": "Have you ever felt a sudden, unexpected spark with someone in this room?"
+      }
+    },
+    {
+      "id": "confession38",
+      "levels": {
+        "1": "What’s a fear or insecurity you’ve never said out loud to this group?",
+        "2": "What’s a fear or insecurity you’ve never said out loud to this group?",
+        "3": "What’s a fear or insecurity you’ve never said out loud to this group?",
+        "4": "What’s a fear or insecurity you’ve never said out loud to this group?"
+      }
+    },
+    {
+      "id": "confession39",
+      "levels": {
+        "1": "Have you ever sent a message and then obsessively checked if it was read?",
+        "2": "Have you ever sent a message and then obsessively checked if it was read?",
+        "3": "Have you ever sent a message and then obsessively checked if it was read?",
+        "4": "Have you ever sent a message and then obsessively checked if it was read?"
+      }
+    },
+    {
+      "id": "confession40",
+      "levels": {
+        "1": "What’s the closest you’ve come to doing something you’d later call a “bad decision”?",
+        "2": "What’s the closest you’ve come to doing something you’d later call a “bad decision”?",
+        "3": "What’s the closest you’ve come to doing something you’d later call a “bad decision”?",
+        "4": "What’s the closest you’ve come to doing something you’d later call a “bad decision”?"
+      }
+    },
+    {
+      "id": "confession41",
+      "levels": {
+        "1": "Have you ever had a crush on someone who had no idea?",
+        "2": "Have you ever had a crush on someone who had no idea?",
+        "3": "Have you ever had a crush on someone who had no idea?",
+        "4": "Have you ever had a crush on someone who had no idea?"
+      }
+    },
+    {
+      "id": "confession42",
+      "levels": {
+        "1": "What’s something you’ve done to look cooler than you actually felt?",
+        "2": "What’s something you’ve done to look cooler than you actually felt?",
+        "3": "What’s something you’ve done to look cooler than you actually felt?",
+        "4": "What’s something you’ve done to look cooler than you actually felt?"
+      }
+    },
+    {
+      "id": "confession43",
+      "levels": {
+        "1": "Have you ever had a moment where you thought “I hope no one noticed that”?",
+        "2": "Have you ever had a moment where you thought “I hope no one noticed that”?",
+        "3": "Have you ever had a moment where you thought “I hope no one noticed that”?",
+        "4": "Have you ever had a moment where you thought “I hope no one noticed that”?"
+      }
+    },
+    {
+      "id": "confession44",
+      "levels": {
+        "1": "What’s a secret preference or taste you have that doesn’t match your public image?",
+        "2": "What’s a secret preference or taste you have that doesn’t match your public image?",
+        "3": "What’s a secret preference or taste you have that doesn’t match your public image?",
+        "4": "What’s a secret preference or taste you have that doesn’t match your public image?"
+      }
+    },
+    {
+      "id": "confession45",
+      "levels": {
+        "1": "Have you ever walked away from a conversation and immediately replayed everything you said?",
+        "2": "Have you ever walked away from a conversation and immediately replayed everything you said?",
+        "3": "Have you ever walked away from a conversation and immediately replayed everything you said?",
+        "4": "Have you ever walked away from a conversation and immediately replayed everything you said?"
       }
     },
     {
       "id": "confession_reward01",
       "levels": {
-        "1": "🎁 REWARD CARD: You and your partner may take two minutes somewhere private. Both of you decide what happens. Either person can decline.",
-        "2": "🎁 REWARD CARD: You and your partner may take two minutes somewhere private. Both of you decide what happens. Either person can decline.",
-        "3": "🎁 REWARD CARD: You and your partner may take two minutes somewhere private. Both of you decide what happens. Either person can decline.",
-        "4": "🎁 REWARD CARD: You and your partner may take two minutes somewhere private. Both of you decide what happens. Either person can decline."
+        "1": "REWARD: Choose another player to answer the next confession question.",
+        "2": "REWARD: Choose another player to answer the next confession question.",
+        "3": "REWARD: Choose another player to answer the next confession question.",
+        "4": "REWARD: Choose another player to answer the next confession question."
       }
     },
     {
       "id": "confession_reward02",
       "levels": {
-        "1": "🎁 REWARD CARD: You may pass your next turn to any player. They get to decide whether to accept.",
-        "2": "🎁 REWARD CARD: You may pass your next turn to any player. They get to decide whether to accept.",
-        "3": "🎁 REWARD CARD: You may pass your next turn to any player. They get to decide whether to accept.",
-        "4": "🎁 REWARD CARD: You may pass your next turn to any player. They get to decide whether to accept."
+        "1": "REWARD: You may skip one confession question without penalty.",
+        "2": "REWARD: You may skip one confession question without penalty.",
+        "3": "REWARD: You may skip one confession question without penalty.",
+        "4": "REWARD: You may skip one confession question without penalty."
       }
     }
   ],
-  "cross": [
-    {
+  "cross": [    {
       "id": "cross01",
       "levels": {
-        "1": "Who here would be most likely to accidentally become famous?",
-        "2": "Who here would be most likely to get away with something ridiculous?",
-        "3": "Who here would be most likely to have a secret double life?",
-        "4": "Who here would be most likely to disappear for a week and return with an unbelievable story?"
+        "1": "Take two players into another room. Flash one of them while the other watches.",
+        "2": "Take two players into another room. Flash one of them while the other watches.",
+        "3": "Take two players into another room. Flash one of them while the other watches.",
+        "4": "Take two players into another room. Flash one of them while the other watches."
       }
     },
     {
       "id": "cross02",
       "levels": {
-        "1": "Choose someone to describe your personality in three words.",
-        "2": "Choose someone to invent a ridiculous nickname for you.",
-        "3": "Choose someone to guess your most embarrassing guilty pleasure.",
-        "4": "Choose someone to invent a scandalous fictional headline about your life."
+        "1": "Let the group decide which player gets to put their hand on your waist (under your shirt if you’re comfortable) for 15 seconds.",
+        "2": "Let the group decide which player gets to put their hand on your waist (under your shirt if you’re comfortable) for 15 seconds.",
+        "3": "Let the group decide which player gets to put their hand on your waist (under your shirt if you’re comfortable) for 15 seconds.",
+        "4": "Let the group decide which player gets to put their hand on your waist (under your shirt if you’re comfortable) for 15 seconds."
       }
     },
     {
       "id": "cross03",
       "levels": {
-        "1": "Who here would be most likely to laugh at the worst possible moment?",
-        "2": "Who here would be most likely to flirt their way out of a parking ticket?",
-        "3": "Who here would be most likely to have a secret talent nobody knows about?",
-        "4": "Who here would be most likely to cause absolute chaos at a formal event?"
+        "1": "Sit on someone’s lap and stay there for a full minute while the rest of the group watches.",
+        "2": "Sit on someone’s lap and stay there for a full minute while the rest of the group watches.",
+        "3": "Sit on someone’s lap and stay there for a full minute while the rest of the group watches.",
+        "4": "Sit on someone’s lap and stay there for a full minute while the rest of the group watches."
       }
     },
     {
       "id": "cross04",
       "levels": {
-        "1": "Choose someone to give you a completely fictional job title.",
-        "2": "Choose someone to describe what your dating profile would say if it were brutally honest but kind.",
-        "3": "Choose someone to invent your most ridiculous hidden talent.",
-        "4": "Choose someone to give you a dramatic introduction as though you're entering a boxing arena."
+        "1": "Take your outer shirt off and stay in whatever is underneath until your next turn.",
+        "2": "Take your outer shirt off and stay in whatever is underneath until your next turn.",
+        "3": "Take your outer shirt off and stay in whatever is underneath until your next turn.",
+        "4": "Take your outer shirt off and stay in whatever is underneath until your next turn."
       }
     },
     {
       "id": "cross05",
       "levels": {
-        "1": "Who here would be most likely to accidentally send a message to the wrong group chat?",
-        "2": "Who here would be most likely to have an unexpectedly wild weekend?",
-        "3": "Who here would be most likely to become a completely different person on vacation?",
-        "4": "Who here would be most likely to start an outrageous rumour about themselves just for entertainment?"
+        "1": "Let someone leave a visible mark (hickey or marker) on your neck or collarbone.",
+        "2": "Let someone leave a visible mark (hickey or marker) on your neck or collarbone.",
+        "3": "Let someone leave a visible mark (hickey or marker) on your neck or collarbone.",
+        "4": "Let someone leave a visible mark (hickey or marker) on your neck or collarbone."
       }
     },
     {
       "id": "cross06",
       "levels": {
-        "1": "Choose someone to give you a ridiculous compliment.",
-        "2": "Choose someone to describe your most obvious personality trait.",
-        "3": "Choose someone to guess what your most outrageous bucket-list item is.",
-        "4": "Choose someone to deliver a dramatic toast celebrating your questionable life choices."
+        "1": "Whisper the most honest, slightly uncomfortable thing you’ve thought about someone in this room to the person across from you.",
+        "2": "Whisper the most honest, slightly uncomfortable thing you’ve thought about someone in this room to the person across from you.",
+        "3": "Whisper the most honest, slightly uncomfortable thing you’ve thought about someone in this room to the person across from you.",
+        "4": "Whisper the most honest, slightly uncomfortable thing you’ve thought about someone in this room to the person across from you."
+      }
+    },
+    {
+      "id": "cross07",
+      "levels": {
+        "1": "Let the group choose a player. Describe, in detail, a suggestive fantasy scenario involving them.",
+        "2": "Let the group choose a player. Describe, in detail, a suggestive fantasy scenario involving them.",
+        "3": "Let the group choose a player. Describe, in detail, a suggestive fantasy scenario involving them.",
+        "4": "Let the group choose a player. Describe, in detail, a suggestive fantasy scenario involving them."
+      }
+    },
+    {
+      "id": "cross08",
+      "levels": {
+        "1": "Take a player into another room and give them a 20-second slow dance.",
+        "2": "Take a player into another room and give them a 20-second slow dance.",
+        "3": "Take a player into another room and give them a 20-second slow dance.",
+        "4": "Take a player into another room and give them a 20-second slow dance."
+      }
+    },
+    {
+      "id": "cross09",
+      "levels": {
+        "1": "Let someone write a short cheeky phrase on your stomach or lower back with a marker.",
+        "2": "Let someone write a short cheeky phrase on your stomach or lower back with a marker.",
+        "3": "Let someone write a short cheeky phrase on your stomach or lower back with a marker.",
+        "4": "Let someone write a short cheeky phrase on your stomach or lower back with a marker."
+      }
+    },
+    {
+      "id": "cross10",
+      "levels": {
+        "1": "Stay without your outer layer for the next two rounds.",
+        "2": "Stay without your outer layer for the next two rounds.",
+        "3": "Stay without your outer layer for the next two rounds.",
+        "4": "Stay without your outer layer for the next two rounds."
+      }
+    },
+    {
+      "id": "cross11",
+      "levels": {
+        "1": "Choose a player and give them a 20-second make-out (or intense almost-kiss if either of you prefers).",
+        "2": "Choose a player and give them a 20-second make-out (or intense almost-kiss if either of you prefers).",
+        "3": "Choose a player and give them a 20-second make-out (or intense almost-kiss if either of you prefers).",
+        "4": "Choose a player and give them a 20-second make-out (or intense almost-kiss if either of you prefers)."
+      }
+    },
+    {
+      "id": "cross12",
+      "levels": {
+        "1": "Let the group vote on who gets to spank you three times (lightly).",
+        "2": "Let the group vote on who gets to spank you three times (lightly).",
+        "3": "Let the group vote on who gets to spank you three times (lightly).",
+        "4": "Let the group vote on who gets to spank you three times (lightly)."
+      }
+    },
+    {
+      "id": "cross13",
+      "levels": {
+        "1": "Take someone into another room and let them run their hands over your back and sides for 30 seconds.",
+        "2": "Take someone into another room and let them run their hands over your back and sides for 30 seconds.",
+        "3": "Take someone into another room and let them run their hands over your back and sides for 30 seconds.",
+        "4": "Take someone into another room and let them run their hands over your back and sides for 30 seconds."
+      }
+    },
+    {
+      "id": "cross14",
+      "levels": {
+        "1": "Demonstrate (clothed) the way you like to be held or touched, using another willing player.",
+        "2": "Demonstrate (clothed) the way you like to be held or touched, using another willing player.",
+        "3": "Demonstrate (clothed) the way you like to be held or touched, using another willing player.",
+        "4": "Demonstrate (clothed) the way you like to be held or touched, using another willing player."
+      }
+    },
+    {
+      "id": "cross15",
+      "levels": {
+        "1": "Stay without your outer shirt and let every player give you one word that describes how you look right now.",
+        "2": "Stay without your outer shirt and let every player give you one word that describes how you look right now.",
+        "3": "Stay without your outer shirt and let every player give you one word that describes how you look right now.",
+        "4": "Stay without your outer shirt and let every player give you one word that describes how you look right now."
+      }
+    },    {
+      "id": "cross16",
+      "levels": {
+        "1": "Let the group choose two players. You have to sit between them with an arm around each for the next round.",
+        "2": "Let the group choose two players. You have to sit between them with an arm around each for the next round.",
+        "3": "Let the group choose two players. You have to sit between them with an arm around each for the next round.",
+        "4": "Let the group choose two players. You have to sit between them with an arm around each for the next round."
+      }
+    },
+    {
+      "id": "cross17",
+      "levels": {
+        "1": "Take a player into another room and let them unbutton or unzip one item of your clothing.",
+        "2": "Take a player into another room and let them unbutton or unzip one item of your clothing.",
+        "3": "Take a player into another room and let them unbutton or unzip one item of your clothing.",
+        "4": "Take a player into another room and let them unbutton or unzip one item of your clothing."
+      }
+    },
+    {
+      "id": "cross18",
+      "levels": {
+        "1": "Let someone bite your neck or shoulder hard enough to leave a mark.",
+        "2": "Let someone bite your neck or shoulder hard enough to leave a mark.",
+        "3": "Let someone bite your neck or shoulder hard enough to leave a mark.",
+        "4": "Let someone bite your neck or shoulder hard enough to leave a mark."
+      }
+    },
+    {
+      "id": "cross19",
+      "levels": {
+        "1": "Whisper something genuinely flirty (and a little bold) to the person of the group’s choice.",
+        "2": "Whisper something genuinely flirty (and a little bold) to the person of the group’s choice.",
+        "3": "Whisper something genuinely flirty (and a little bold) to the person of the group’s choice.",
+        "4": "Whisper something genuinely flirty (and a little bold) to the person of the group’s choice."
+      }
+    },
+    {
+      "id": "cross20",
+      "levels": {
+        "1": "Let the group decide which player gets a 30-second back-and-shoulder massage from you.",
+        "2": "Let the group decide which player gets a 30-second back-and-shoulder massage from you.",
+        "3": "Let the group decide which player gets a 30-second back-and-shoulder massage from you.",
+        "4": "Let the group decide which player gets a 30-second back-and-shoulder massage from you."
+      }
+    },
+    {
+      "id": "cross21",
+      "levels": {
+        "1": "Remove one more layer than you did last time you were dared (still no underwear-only).",
+        "2": "Remove one more layer than you did last time you were dared (still no underwear-only).",
+        "3": "Remove one more layer than you did last time you were dared (still no underwear-only).",
+        "4": "Remove one more layer than you did last time you were dared (still no underwear-only)."
+      }
+    },
+    {
+      "id": "cross22",
+      "levels": {
+        "1": "Take two players into the hallway and let one of them decide how close the three of you stand for a full minute.",
+        "2": "Take two players into the hallway and let one of them decide how close the three of you stand for a full minute.",
+        "3": "Take two players into the hallway and let one of them decide how close the three of you stand for a full minute.",
+        "4": "Take two players into the hallway and let one of them decide how close the three of you stand for a full minute."
+      }
+    },
+    {
+      "id": "cross23",
+      "levels": {
+        "1": "Let someone draw a temporary design somewhere on your torso with a marker.",
+        "2": "Let someone draw a temporary design somewhere on your torso with a marker.",
+        "3": "Let someone draw a temporary design somewhere on your torso with a marker.",
+        "4": "Let someone draw a temporary design somewhere on your torso with a marker."
+      }
+    },
+    {
+      "id": "cross24",
+      "levels": {
+        "1": "Choose a player and keep physical contact with them (hand on leg, arm around shoulder, etc.) until your next turn.",
+        "2": "Choose a player and keep physical contact with them (hand on leg, arm around shoulder, etc.) until your next turn.",
+        "3": "Choose a player and keep physical contact with them (hand on leg, arm around shoulder, etc.) until your next turn.",
+        "4": "Choose a player and keep physical contact with them (hand on leg, arm around shoulder, etc.) until your next turn."
+      }
+    },
+    {
+      "id": "cross25",
+      "levels": {
+        "1": "Let the group vote on a player. You have to describe what you think their “type” is in bed (keep it suggestive).",
+        "2": "Let the group vote on a player. You have to describe what you think their “type” is in bed (keep it suggestive).",
+        "3": "Let the group vote on a player. You have to describe what you think their “type” is in bed (keep it suggestive).",
+        "4": "Let the group vote on a player. You have to describe what you think their “type” is in bed (keep it suggestive)."
+      }
+    },
+    {
+      "id": "cross26",
+      "levels": {
+        "1": "Take a player into another room and exchange a 15-second forehead-to-forehead stare in silence.",
+        "2": "Take a player into another room and exchange a 15-second forehead-to-forehead stare in silence.",
+        "3": "Take a player into another room and exchange a 15-second forehead-to-forehead stare in silence.",
+        "4": "Take a player into another room and exchange a 15-second forehead-to-forehead stare in silence."
+      }
+    },
+    {
+      "id": "cross27",
+      "levels": {
+        "1": "Let someone adjust your clothes or hair in a deliberately intimate way.",
+        "2": "Let someone adjust your clothes or hair in a deliberately intimate way.",
+        "3": "Let someone adjust your clothes or hair in a deliberately intimate way.",
+        "4": "Let someone adjust your clothes or hair in a deliberately intimate way."
+      }
+    },
+    {
+      "id": "cross28",
+      "levels": {
+        "1": "Stay in only your base layer (t-shirt/bra + bottoms) for the next full round.",
+        "2": "Stay in only your base layer (t-shirt/bra + bottoms) for the next full round.",
+        "3": "Stay in only your base layer (t-shirt/bra + bottoms) for the next full round.",
+        "4": "Stay in only your base layer (t-shirt/bra + bottoms) for the next full round."
+      }
+    },
+    {
+      "id": "cross29",
+      "levels": {
+        "1": "Let the group choose who gets to give you a playful but firm spank.",
+        "2": "Let the group choose who gets to give you a playful but firm spank.",
+        "3": "Let the group choose who gets to give you a playful but firm spank.",
+        "4": "Let the group choose who gets to give you a playful but firm spank."
+      }
+    },
+    {
+      "id": "cross30",
+      "levels": {
+        "1": "Whisper a secret you’ve never told this group to the person sitting farthest from you.",
+        "2": "Whisper a secret you’ve never told this group to the person sitting farthest from you.",
+        "3": "Whisper a secret you’ve never told this group to the person sitting farthest from you.",
+        "4": "Whisper a secret you’ve never told this group to the person sitting farthest from you."
+      }
+    },    {
+      "id": "cross31",
+      "levels": {
+        "1": "Take a player into another room and let them decide whether you flash them or they flash you.",
+        "2": "Take a player into another room and let them decide whether you flash them or they flash you.",
+        "3": "Take a player into another room and let them decide whether you flash them or they flash you.",
+        "4": "Take a player into another room and let them decide whether you flash them or they flash you."
+      }
+    },
+    {
+      "id": "cross32",
+      "levels": {
+        "1": "Let someone write a short phrase of their choice on your lower stomach or upper thigh area (marker).",
+        "2": "Let someone write a short phrase of their choice on your lower stomach or upper thigh area (marker).",
+        "3": "Let someone write a short phrase of their choice on your lower stomach or upper thigh area (marker).",
+        "4": "Let someone write a short phrase of their choice on your lower stomach or upper thigh area (marker)."
+      }
+    },
+    {
+      "id": "cross33",
+      "levels": {
+        "1": "Sit on the floor between two players’ legs and stay there for one full minute.",
+        "2": "Sit on the floor between two players’ legs and stay there for one full minute.",
+        "3": "Sit on the floor between two players’ legs and stay there for one full minute.",
+        "4": "Sit on the floor between two players’ legs and stay there for one full minute."
+      }
+    },
+    {
+      "id": "cross34",
+      "levels": {
+        "1": "Let the group pick a player. You have to give them a 20-second neck and shoulder massage while standing very close.",
+        "2": "Let the group pick a player. You have to give them a 20-second neck and shoulder massage while standing very close.",
+        "3": "Let the group pick a player. You have to give them a 20-second neck and shoulder massage while standing very close.",
+        "4": "Let the group pick a player. You have to give them a 20-second neck and shoulder massage while standing very close."
+      }
+    },
+    {
+      "id": "cross35",
+      "levels": {
+        "1": "Remove your socks and shoes and keep them off, plus one additional item of the group’s choice.",
+        "2": "Remove your socks and shoes and keep them off, plus one additional item of the group’s choice.",
+        "3": "Remove your socks and shoes and keep them off, plus one additional item of the group’s choice.",
+        "4": "Remove your socks and shoes and keep them off, plus one additional item of the group’s choice."
+      }
+    },
+    {
+      "id": "cross36",
+      "levels": {
+        "1": "Take two willing players into another room and let them decide a mild physical dare for you.",
+        "2": "Take two willing players into another room and let them decide a mild physical dare for you.",
+        "3": "Take two willing players into another room and let them decide a mild physical dare for you.",
+        "4": "Take two willing players into another room and let them decide a mild physical dare for you."
+      }
+    },
+    {
+      "id": "cross37",
+      "levels": {
+        "1": "Let someone leave a lipstick or marker kiss mark somewhere visible on you.",
+        "2": "Let someone leave a lipstick or marker kiss mark somewhere visible on you.",
+        "3": "Let someone leave a lipstick or marker kiss mark somewhere visible on you.",
+        "4": "Let someone leave a lipstick or marker kiss mark somewhere visible on you."
+      }
+    },
+    {
+      "id": "cross38",
+      "levels": {
+        "1": "Choose a player and hold eye contact while slowly moving closer until the group says stop.",
+        "2": "Choose a player and hold eye contact while slowly moving closer until the group says stop.",
+        "3": "Choose a player and hold eye contact while slowly moving closer until the group says stop.",
+        "4": "Choose a player and hold eye contact while slowly moving closer until the group says stop."
+      }
+    },
+    {
+      "id": "cross39",
+      "levels": {
+        "1": "Let the group vote on who gets to hold your hand under the table (or behind a cushion) for the next two turns.",
+        "2": "Let the group vote on who gets to hold your hand under the table (or behind a cushion) for the next two turns.",
+        "3": "Let the group vote on who gets to hold your hand under the table (or behind a cushion) for the next two turns.",
+        "4": "Let the group vote on who gets to hold your hand under the table (or behind a cushion) for the next two turns."
+      }
+    },
+    {
+      "id": "cross40",
+      "levels": {
+        "1": "Take a player into another room and exchange one genuine compliment and one teasing, slightly dirty one.",
+        "2": "Take a player into another room and exchange one genuine compliment and one teasing, slightly dirty one.",
+        "3": "Take a player into another room and exchange one genuine compliment and one teasing, slightly dirty one.",
+        "4": "Take a player into another room and exchange one genuine compliment and one teasing, slightly dirty one."
+      }
+    },
+    {
+      "id": "cross41",
+      "levels": {
+        "1": "Stay with one hand on a player of the group’s choice until your next turn.",
+        "2": "Stay with one hand on a player of the group’s choice until your next turn.",
+        "3": "Stay with one hand on a player of the group’s choice until your next turn.",
+        "4": "Stay with one hand on a player of the group’s choice until your next turn."
+      }
+    },
+    {
+      "id": "cross42",
+      "levels": {
+        "1": "Let someone unbutton the top button (or equivalent) of your shirt/top and leave it that way.",
+        "2": "Let someone unbutton the top button (or equivalent) of your shirt/top and leave it that way.",
+        "3": "Let someone unbutton the top button (or equivalent) of your shirt/top and leave it that way.",
+        "4": "Let someone unbutton the top button (or equivalent) of your shirt/top and leave it that way."
+      }
+    },
+    {
+      "id": "cross43",
+      "levels": {
+        "1": "Whisper the boldest thing you’d be willing to do right now if the group dared you.",
+        "2": "Whisper the boldest thing you’d be willing to do right now if the group dared you.",
+        "3": "Whisper the boldest thing you’d be willing to do right now if the group dared you.",
+        "4": "Whisper the boldest thing you’d be willing to do right now if the group dared you."
+      }
+    },
+    {
+      "id": "cross44",
+      "levels": {
+        "1": "Take a player into the hallway and stay in a close embrace for a full minute.",
+        "2": "Take a player into the hallway and stay in a close embrace for a full minute.",
+        "3": "Take a player into the hallway and stay in a close embrace for a full minute.",
+        "4": "Take a player into the hallway and stay in a close embrace for a full minute."
+      }
+    },
+    {
+      "id": "cross45",
+      "levels": {
+        "1": "Let the group invent one final mild but escalating dare for you right now.",
+        "2": "Let the group invent one final mild but escalating dare for you right now.",
+        "3": "Let the group invent one final mild but escalating dare for you right now.",
+        "4": "Let the group invent one final mild but escalating dare for you right now."
       }
     },
     {
       "id": "cross_reward01",
       "levels": {
-        "1": "🎁 REWARD CARD: Pick another player. They may take your next turn instead, or decline and let you keep it.",
-        "2": "🎁 REWARD CARD: Pick another player. They may take your next turn instead, or decline and let you keep it.",
-        "3": "🎁 REWARD CARD: Pick another player. They may take your next turn instead, or decline and let you keep it.",
-        "4": "🎁 REWARD CARD: Pick another player. They may take your next turn instead, or decline and let you keep it."
+        "1": "REWARD: Choose a willing player to complete your next Cross the Line card with you.",
+        "2": "REWARD: Choose a willing player to complete your next Cross the Line card with you.",
+        "3": "REWARD: Choose a willing player to complete your next Cross the Line card with you.",
+        "4": "REWARD: Choose a willing player to complete your next Cross the Line card with you."
       }
     },
     {
       "id": "cross_reward02",
       "levels": {
-        "1": "🎁 REWARD CARD: You may skip your next turn. This card can also be saved to cancel a punishment.",
-        "2": "🎁 REWARD CARD: You may skip your next turn. This card can also be saved to cancel a punishment.",
-        "3": "🎁 REWARD CARD: You may skip your next turn. This card can also be saved to cancel a punishment.",
-        "4": "🎁 REWARD CARD: You may skip your next turn. This card can also be saved to cancel a punishment."
+        "1": "REWARD: Trade your next Cross the Line card for a Truth or Confession card.",
+        "2": "REWARD: Trade your next Cross the Line card for a Truth or Confession card.",
+        "3": "REWARD: Trade your next Cross the Line card for a Truth or Confession card.",
+        "4": "REWARD: Trade your next Cross the Line card for a Truth or Confession card."
       }
     }
   ],
-  "punishment": [
-    "Give a 30-second acceptance speech for the award of Most Questionable Decisions.",
-    "Let the group choose a ridiculous phrase you must work into every sentence until your next turn.",
-    "Stand up and deliver a dramatic apology to an imaginary audience for your behaviour tonight.",
-    "Give the person across from you a completely serious, over-the-top compliment.",
-    "Perform a 20-second runway walk. The group decides your imaginary fashion label.",
-    "Let the group invent a ridiculous title for you. You must introduce yourself using it for the next round.",
-    "Give a dramatic reading of the last ordinary sentence someone says.",
-    "Sell the group an imaginary product that absolutely nobody needs.",
-    "Re-enact how you look when you think you're being irresistibly charming.",
-    "Make up a completely fictional scandal involving yourself and defend it for 30 seconds.",
-    "Give a motivational speech to an inanimate object.",
-    "Let the group choose an emotion. Act it out until someone guesses correctly.",
-    "Deliver a dramatic weather report describing the current atmosphere in the room.",
-    "Speak as though you're narrating a nature documentary about the person beside you. Keep it kind.",
-    "Give a 30-second performance of your most embarrassing attempt at flirting.",
-    "Invent a ridiculous catchphrase and use it three times before your next turn.",
-    "Recreate your most dramatic reaction to receiving a completely ordinary text message.",
-    "Give a formal toast to the worst decision you've ever made. Keep the details to yourself.",
-    "Pretend you're being interviewed after the most ridiculous event of your life.",
-    "Choose a harmless object in the room and explain why it has betrayed you."
+  "punishment": [    "Take your partner or a willing player of the same sex into another room and flash them for 5 seconds.",
+    "Let your partner or a willing player of the same sex spank you three times (firm but not painful).",
+    "Sit on your partner’s lap or the lap of a willing player of the same sex for a full minute while the rest of the group watches.",
+    "Remove your outer shirt and keep it off until your next turn.",
+    "Let your partner or a willing player of the same sex leave a visible hickey or marker mark on your neck or collarbone.",
+    "Whisper the most honest, slightly dirty thought you’ve had about your partner or a willing player of the same sex to them.",
+    "Take your partner or a willing player of the same sex into another room and give them a 20-second slow, close dance.",
+    "Let your partner or a willing player of the same sex write a short cheeky or suggestive phrase on your lower back or stomach with a marker.",
+    "Choose your partner or a willing player of the same sex and give them a 20-second make-out (or intense almost-kiss if either of you prefers).",
+    "Let your partner or a willing player of the same sex put their hands on your waist (under your shirt if you’re comfortable) for 20 seconds.",
+    "Stay without your outer layer for the next two full rounds.",
+    "Take your partner or a willing player of the same sex into another room and let them run their hands over your back, sides, and stomach for 30 seconds.",
+    "Demonstrate (clothed) the way you like to be touched or held, using your partner or another willing player of the same sex.",
+    "Let every player give you one word that describes how fuckable you look right now.",
+    "Sit between your partner and/or willing players of the same sex, with an arm around each, and stay there for the next round.",    "Let your partner or a willing player of the same sex unbutton or unzip one item of your clothing and leave it that way.",
+    "Whisper something genuinely flirty and a little bold to your partner or a willing player of the same sex.",
+    "Take two willing players of the same sex into the hallway and let one of them decide how close the three of you stand for a full minute.",
+    "Let your partner or a willing player of the same sex draw a temporary design somewhere on your torso with a marker.",
+    "Keep continuous physical contact (hand on leg, arm around waist, etc.) with your partner or a willing player of the same sex until your next turn.",
+    "Describe, in suggestive detail, a fantasy scenario involving your partner or a willing player of the same sex.",
+    "Take your partner or a willing player of the same sex into another room and exchange a 15-second forehead-to-forehead stare in complete silence.",
+    "Let your partner or a willing player of the same sex adjust your clothes or hair in a deliberately intimate way.",
+    "Stay in only your base layer (t-shirt/bra + bottoms) for the next full round.",
+    "Let your partner or a willing player of the same sex give you a playful but firm spank.",
+    "Whisper a secret you’ve never told this group to the person sitting farthest from you.",
+    "Take your partner or a willing player of the same sex into another room and let them decide whether you flash them or they flash you.",
+    "Let your partner or a willing player of the same sex write a short phrase of their choice on your lower stomach or upper thigh area.",
+    "Sit on the floor between your partner’s legs or the legs of a willing player of the same sex and stay there for one full minute.",
+    "Give a 20-second neck and shoulder massage to a player of your choice while standing very close.",    "Remove your socks and shoes plus one additional item of the group’s choice and keep them off.",
+    "Take two willing players into another room and let them decide a mild physical dare for you.",
+    "Let your partner or a willing player of the same sex leave a lipstick or marker kiss mark somewhere visible on you.",
+    "Choose your partner or a willing player of the same sex and hold eye contact while slowly moving closer until the group says stop.",
+    "Let your partner or a willing player of the same sex hold your hand under the table (or behind a cushion) for the next two turns.",
+    "Take your partner or a willing player of the same sex into another room and exchange one genuine compliment and one teasing, slightly dirty one.",
+    "Stay with one hand on your partner or a willing player of the same sex until your next turn.",
+    "Let your partner or a willing player of the same sex unbutton the top button (or equivalent) of your shirt/top and leave it that way.",
+    "Whisper the boldest thing you’d be willing to do right now if the group dared you.",
+    "Take your partner or a willing player of the same sex into the hallway and stay in a close embrace for a full minute.",
+    "Let the group invent one final mild but escalating physical dare for you right now.",
+    "Choose two willing players of the same sex. You must stay linked arm-in-arm with both for the next round.",
+    "Let someone decide a temporary “dress code” change for you (within comfort).",
+    "Take your partner or a willing player of the same sex into another room and let them choose a 20-second intimate but non-explicit action.",
+    "Give a 15-second slow dance to your partner or a willing player of the same sex in the middle of the room.",    "Whisper something you’ve never admitted about attraction to your partner or a willing player of the same sex.",
+    "Stay without one layer of clothing for the next two full rounds.",
+    "Let your partner or a willing player of the same sex place their hands on your waist and keep them there for 30 seconds.",
+    "Take your partner or a willing player of the same sex into another room and exchange a 20-second back-to-back lean in silence.",
+    "Describe a suggestive scenario involving your partner or a willing player of the same sex without using explicit words.",
+    "Remove an accessory or outer layer and let the group decide when you can put it back on.",
+    "Choose your partner or a willing player of the same sex and keep your forehead against theirs for 20 seconds.",
+    "Let your partner or a willing player of the same sex write a temporary word of their choice on your collarbone area.",
+    "Sit on the arm of your partner’s chair (or their lap if preferred) for the next full turn.",
+    "Take your partner and another willing player of the same sex and form a close triangle for 30 seconds while the group watches.",
+    "Let your partner or a willing player of the same sex participate in a light biting or marking dare (within comfort).",
+    "Whisper the most flirty thing you can think of to two different willing players of the same sex.",
+    "Stay in physical contact (hand on shoulder or arm) with your partner or a willing player of the same sex until your next turn.",
+    "Let your partner or a willing player of the same sex adjust your clothing in a way that feels deliberately intimate.",
+    "Take your partner or a willing player of the same sex into another room and let them decide the next mild Cross the Line action."
   ]
 }
