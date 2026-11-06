@@ -1,3 +1,4 @@
+
 const $ = id => document.getElementById(id);
 const screens = [...document.querySelectorAll(".screen")];
 
@@ -183,6 +184,20 @@ function pickCard(deck, excludedId = null) {
   return picked;
 }
 
+function getCardText(item) {
+  if (typeof item === "string") {
+    return item;
+  }
+
+  if (item.levels) {
+    return item.levels["1"] ||
+      Object.values(item.levels)[0] ||
+      "";
+  }
+
+  return item.text || "";
+}
+
 function drawCard(deck) {
   const item = pickCard(deck);
 
@@ -192,13 +207,10 @@ function drawCard(deck) {
     return;
   }
 
-  const level = Math.random() < 0.5 ? 2 : 3;
-
   state.current = {
     deck,
     item,
-    level,
-    text: item.levels[String(level)]
+    text: getCardText(item)
   };
 
   state.second = null;
@@ -215,10 +227,7 @@ function renderCard() {
   $("category").textContent =
     current.deck.toUpperCase();
 
-  $("intensity").textContent =
-    state.second
-      ? `TWO-CARD CHALLENGE · LEVEL ${current.level}`
-      : `INTENSITY LEVEL ${current.level}`;
+  $("intensity").hidden = true;
 
   $("prompt").textContent = state.second
     ? `${current.text}\n\n— AND THEN —\n\n${state.second.text}`
@@ -390,6 +399,8 @@ $("skip").onclick = next;
 
 /* DOUBLE DOWN */
 
+$("double-intensity").hidden = true;
+
 $("double").onclick = () => {
   if (!state.current) return;
 
@@ -400,7 +411,7 @@ $("double").onclick = () => {
 
 $("double-back").onclick = () => show("card");
 
-/* OPTION ONE: DRAW A SECOND CARD */
+/* DRAW A SECOND CARD */
 
 $("double-card").onclick = () => {
   if (!state.current) return;
@@ -412,37 +423,10 @@ $("double-card").onclick = () => {
 
   if (!item) return;
 
-  const level = state.current.level;
-
   state.second = {
     id: item.id,
-    text: item.levels[String(level)]
+    text: getCardText(item)
   };
-
-  renderCard();
-  show("card");
-};
-
-/* OPTION TWO: INCREASE INTENSITY */
-
-$("double-intensity").onclick = () => {
-  if (!state.current) return;
-
-  const current = state.current;
-
-  if (current.level >= 4) return;
-
-  const nextLevel = current.level + 1;
-
-  const replacement =
-    current.item.levels[String(nextLevel)];
-
-  if (!replacement) return;
-
-  current.level = nextLevel;
-  current.text = replacement;
-
-  state.second = null;
 
   renderCard();
   show("card");
