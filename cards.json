@@ -1,34 +1,316 @@
 {
   "truth": [
-    "What's a lie you've told that you've never been caught in?",
-    "Have you ever been attracted to someone you absolutely shouldn't have been?",
-    "What's something you've done that your partner still doesn't know about?",
-    "What's the most embarrassing thing you've done to impress someone?"
+    {
+      "id": "truth01",
+      "levels": {
+        "1": "What's a small thing that instantly improves your mood?",
+        "2": "What's something you pretend to enjoy but actually don't?",
+        "3": "What's a first impression you had of someone here that turned out to be wrong?",
+        "4": "What's something you've never admitted to this group?"
+      }
+    },
+    {
+      "id": "truth02",
+      "levels": {
+        "1": "What's your most harmless guilty pleasure?",
+        "2": "What's the most ridiculous thing you've done to impress someone?",
+        "3": "Have you ever had feelings for someone you probably shouldn't have?",
+        "4": "What's a secret you've kept because you were afraid of how people would react?"
+      }
+    },
+    {
+      "id": "truth03",
+      "levels": {
+        "1": "What's the strangest food combination you genuinely enjoy?",
+        "2": "What's the most embarrassing thing you've done while trying to look cool?",
+        "3": "What's something about your dating history that would surprise this group?",
+        "4": "What's the biggest lie you've told someone sitting here?"
+      }
+    },
+    {
+      "id": "truth04",
+      "levels": {
+        "1": "What's one thing you're surprisingly bad at?",
+        "2": "Who here would you trust least to keep a secret, and why?",
+        "3": "Have you ever secretly judged someone here? What was it about?",
+        "4": "What's an opinion you hold that you know would divide this room?"
+      }
+    },
+    {
+      "id": "truth05",
+      "levels": {
+        "1": "What's your most irrational fear?",
+        "2": "What's the pettiest reason you've ever disliked someone?",
+        "3": "What's something you wish people understood about you?",
+        "4": "What's one thing about yourself that you actively try to hide?"
+      }
+    },
+    {
+      "id": "truth06",
+      "levels": {
+        "1": "What's the worst haircut you've ever had?",
+        "2": "What's the most awkward message you've sent to the wrong person?",
+        "3": "Have you ever pursued someone knowing it probably wouldn't end well?",
+        "4": "What's the most selfish thing you've done in a relationship?"
+      }
+    },
+    {
+      "id": "truth07",
+      "levels": {
+        "1": "What's something childish you still love doing?",
+        "2": "What's something you've exaggerated to make yourself sound better?",
+        "3": "Who in this room do you think knows you the least?",
+        "4": "What's something you've done that you still feel guilty about?"
+      }
+    },
+    {
+      "id": "truth08",
+      "levels": {
+        "1": "What's your most useless talent?",
+        "2": "What's the strangest thing you've done when you thought nobody was watching?",
+        "3": "What's one relationship mistake you've repeated?",
+        "4": "If everyone here could see one moment from your past, which would you least want them to see?"
+      }
+    }
   ],
   "dare": [
-    "Give someone your most convincing seductive pickup line.",
-    "Deliver a 30-second speech explaining why you're the best-looking person here.",
-    "Maintain eye contact with another player for 45 seconds without laughing.",
-    "Re-enact your first date with your partner."
+    {
+      "id": "dare01",
+      "levels": {
+        "1": "Speak in a dramatic movie-trailer voice until your next turn.",
+        "2": "Let the group choose a harmless nickname for you for the next three rounds.",
+        "3": "Deliver a passionate breakup speech to an ordinary household object.",
+        "4": "Give a completely serious 30-second speech explaining why you are the most misunderstood person in the room."
+      }
+    },
+    {
+      "id": "dare02",
+      "levels": {
+        "1": "Do your best impression of someone famous.",
+        "2": "Recreate your most embarrassing facial expression.",
+        "3": "Act out how you flirt when you're genuinely nervous.",
+        "4": "Perform a dramatic reenactment of your most awkward real-life moment."
+      }
+    },
+    {
+      "id": "dare03",
+      "levels": {
+        "1": "Sing the chorus of a song chosen by the group.",
+        "2": "Give a weather forecast for the current room as dramatically as possible.",
+        "3": "Give a heartfelt acceptance speech for an award nobody would ever give you.",
+        "4": "Let the group give you a ridiculous scenario and improvise your way through it for one minute."
+      }
+    },
+    {
+      "id": "dare04",
+      "levels": {
+        "1": "Talk like a robot until your next turn.",
+        "2": "Try to make someone laugh without smiling yourself.",
+        "3": "Give another player an extremely specific and exaggerated compliment.",
+        "4": "Make a convincing argument that you should be in charge of this entire group."
+      }
+    },
+    {
+      "id": "dare05",
+      "levels": {
+        "1": "Do your best victory dance.",
+        "2": "Recreate the way you look when you see someone attractive.",
+        "3": "Pretend you're on a reality dating show and explain why someone should choose you.",
+        "4": "Give a dramatic confession of love to the person or object directly across from you. Keep it theatrical and respectful."
+      }
+    },
+    {
+      "id": "dare06",
+      "levels": {
+        "1": "Make up a new handshake with the player beside you.",
+        "2": "Narrate the next player's actions like a sports commentator.",
+        "3": "Give a one-minute motivational speech about a completely ridiculous topic.",
+        "4": "Recreate a full argument between two versions of yourself, playing both characters."
+      }
+    },
+    {
+      "id": "dare07",
+      "levels": {
+        "1": "Hold your most serious expression for 20 seconds.",
+        "2": "Describe yourself as if you were a product being advertised on television.",
+        "3": "Act out how you would behave if you were caught doing something embarrassing.",
+        "4": "Improvise a dramatic apology for something you have never actually done."
+      }
+    },
+    {
+      "id": "dare08",
+      "levels": {
+        "1": "Make up a ridiculous slogan for the person to your left.",
+        "2": "Speak only in questions until your next turn.",
+        "3": "Give a completely fake TED Talk about your greatest personal achievement.",
+        "4": "Convince the group that you have a secret talent, then demonstrate it."
+      }
+    }
   ],
   "confession": [
-    "What's something you secretly judge people for?",
-    "Have you ever snooped through someone else's phone?",
-    "What's a harmless secret you've kept from this group?",
-    "What's the most questionable excuse you've used to get out of plans?"
+    {
+      "id": "confession01",
+      "levels": {
+        "1": "Confess a harmless habit you know is annoying.",
+        "2": "Admit to something you've done just to get attention.",
+        "3": "Confess something you've been too embarrassed to tell your friends.",
+        "4": "Tell the group something about your life that you usually leave out when telling stories."
+      }
+    },
+    {
+      "id": "confession02",
+      "levels": {
+        "1": "Admit to the last ridiculous thing you searched online.",
+        "2": "Confess a time you pretended to know something you didn't.",
+        "3": "Admit to a time you were jealous but acted like you weren't.",
+        "4": "Confess a time you knowingly let someone believe something untrue about you."
+      }
+    },
+    {
+      "id": "confession03",
+      "levels": {
+        "1": "Admit to a song you secretly love.",
+        "2": "Confess the most ridiculous excuse you've ever used to get out of plans.",
+        "3": "Admit to a time you wanted someone else's life.",
+        "4": "Confess something you regret saying to someone who mattered to you."
+      }
+    },
+    {
+      "id": "confession04",
+      "levels": {
+        "1": "Confess something you are terrible at but refuse to give up.",
+        "2": "Admit to a time you acted like you were having fun when you absolutely weren't.",
+        "3": "Confess a time you judged someone before knowing their story.",
+        "4": "Admit to something you know you need to change but keep avoiding."
+      }
+    },
+    {
+      "id": "confession05",
+      "levels": {
+        "1": "Admit to a childish thing you still do.",
+        "2": "Confess the last time you were caught in a lie.",
+        "3": "Admit to a time you wanted an apology but never asked for one.",
+        "4": "Confess a truth about yourself that is difficult to accept."
+      }
+    },
+    {
+      "id": "confession06",
+      "levels": {
+        "1": "Confess a weird habit you have when you're alone.",
+        "2": "Admit to a time you were deliberately being dramatic.",
+        "3": "Confess a time you hurt someone's feelings without admitting it at the time.",
+        "4": "Admit to a decision you would change if you could go back."
+      }
+    },
+    {
+      "id": "confession07",
+      "levels": {
+        "1": "Confess the most ridiculous thing you've spent money on.",
+        "2": "Admit to something you do when you want people to like you.",
+        "3": "Confess something you have never told your closest friend.",
+        "4": "Admit to a time you were the problem but blamed someone else."
+      }
+    },
+    {
+      "id": "confession08",
+      "levels": {
+        "1": "Confess a silly superstition you have.",
+        "2": "Admit to something you secretly enjoy being complimented on.",
+        "3": "Confess a moment when you felt like an outsider.",
+        "4": "Tell the group one thing you wish you had the courage to say more often."
+      }
+    }
   ],
   "cross": [
-    "Who here would you trust least with a secret, and why?",
-    "If you had to switch lives with someone here for a month, who would it be?",
-    "Which couple here would be most entertaining on a reality TV show?",
-    "What's a question you hope nobody asks you tonight?"
+    {
+      "id": "cross01",
+      "levels": {
+        "1": "Choose someone. Tell them one thing you genuinely appreciate about them.",
+        "2": "Choose someone. Tell them what you noticed about them when you first met.",
+        "3": "Choose someone. Tell them something you've wanted to ask them but never have.",
+        "4": "Choose someone. Tell them one thing you think they don't give themselves enough credit for."
+      }
+    },
+    {
+      "id": "cross02",
+      "levels": {
+        "1": "The group chooses who has the best sense of humour. That person must explain why.",
+        "2": "Point to the person most likely to accidentally become famous.",
+        "3": "Choose the person you think would be hardest to read in a serious situation. Explain why.",
+        "4": "Choose someone and tell them one assumption you made about them that changed over time."
+      }
+    },
+    {
+      "id": "cross03",
+      "levels": {
+        "1": "Ask another player a question you've always been curious about.",
+        "2": "Choose someone to describe your personality in three words.",
+        "3": "Ask someone here what they think your biggest blind spot is.",
+        "4": "Ask someone here what they think you need to hear, even if you might not like it."
+      }
+    },
+    {
+      "id": "cross04",
+      "levels": {
+        "1": "Choose someone to share a favourite memory with you.",
+        "2": "Tell someone what you think their most underrated quality is.",
+        "3": "Choose someone and ask what they wish people understood about them.",
+        "4": "Tell someone here how they have influenced you, positively or negatively."
+      }
+    },
+    {
+      "id": "cross05",
+      "levels": {
+        "1": "Choose who would survive longest on a deserted island.",
+        "2": "Choose who would be the worst person to share a hotel room with.",
+        "3": "Choose who you think is the best at hiding their emotions. Explain your answer.",
+        "4": "Choose someone and tell them something you think they avoid talking about."
+      }
+    },
+    {
+      "id": "cross06",
+      "levels": {
+        "1": "Give someone a sincere compliment.",
+        "2": "Choose someone and tell them what role they'd play in a heist movie.",
+        "3": "Ask someone what their biggest misconception about you is.",
+        "4": "Choose someone and ask them what they think you should be more honest with yourself about."
+      }
+    },
+    {
+      "id": "cross07",
+      "levels": {
+        "1": "Choose two people who would make a great comedy duo.",
+        "2": "Tell someone what fictional character reminds you of them.",
+        "3": "Choose someone and tell them what you think they're most afraid of failing at.",
+        "4": "Choose someone and tell them something you respect about them but rarely say."
+      }
+    },
+    {
+      "id": "cross08",
+      "levels": {
+        "1": "Ask the group who would be the best person to call in an emergency.",
+        "2": "Choose someone who you think has changed the most since you met them.",
+        "3": "Ask someone what they think you misunderstand about them.",
+        "4": "Choose someone and tell them one conversation you think the two of you should have."
+      }
+    }
   ],
   "punishment": [
-    "Do 15 pushups, or choose a seated alternative exercise.",
-    "Show a camera-roll photo you'd never post publicly. You may choose a different harmless photo.",
-    "Give everyone in the room a sincere compliment.",
-    "Take three sips of your drink, or choose a non-alcoholic alternative.",
-    "Give a dramatic 30-second apology to an object in the room.",
-    "Let the group give you a ridiculous nickname for the next three turns."
+    "You must speak in a terrible accent until your next turn.",
+    "The group chooses a harmless nickname for you. It lasts three rounds.",
+    "Give a 30-second speech explaining why you are the most chaotic person here.",
+    "You must narrate your next turn like a nature documentary.",
+    "Perform your best impression of the person who just played.",
+    "Let the group choose a word you must work into every sentence until your next turn.",
+    "Give an overly dramatic apology to the group for your failure.",
+    "You must answer the next question in the style of a courtroom witness.",
+    "Invent a completely ridiculous backstory for yourself and present it as fact.",
+    "Give a heartfelt motivational speech to an inanimate object.",
+    "The group gets to ask you one follow-up question about your last answer.",
+    "You must maintain an exaggerated serious expression until your next turn.",
+    "Reenact your most awkward social interaction.",
+    "Give the player who issued the challenge a ridiculously formal title.",
+    "Let the group choose a song for you to dramatically lip-sync.",
+    "Explain your last decision as though you are defending it in court."
   ]
 }
