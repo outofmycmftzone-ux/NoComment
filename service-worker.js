@@ -1,5 +1,5 @@
 
-const CACHE = "no-comment-v4";
+const CACHE = "no-comment-v5";
 
 const FILES = [
   "./",
