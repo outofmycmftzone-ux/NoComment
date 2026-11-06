@@ -1,0 +1,34 @@
+{
+  "truth": [
+    "What's a lie you've told that you've never been caught in?",
+    "Have you ever been attracted to someone you absolutely shouldn't have been?",
+    "What's something you've done that your partner still doesn't know about?",
+    "What's the most embarrassing thing you've done to impress someone?"
+  ],
+  "dare": [
+    "Give someone your most convincing seductive pickup line.",
+    "Deliver a 30-second speech explaining why you're the best-looking person here.",
+    "Maintain eye contact with another player for 45 seconds without laughing.",
+    "Re-enact your first date with your partner."
+  ],
+  "confession": [
+    "What's something you secretly judge people for?",
+    "Have you ever snooped through someone else's phone?",
+    "What's a harmless secret you've kept from this group?",
+    "What's the most questionable excuse you've used to get out of plans?"
+  ],
+  "cross": [
+    "Who here would you trust least with a secret, and why?",
+    "If you had to switch lives with someone here for a month, who would it be?",
+    "Which couple here would be most entertaining on a reality TV show?",
+    "What's a question you hope nobody asks you tonight?"
+  ],
+  "punishment": [
+    "Do 15 pushups, or choose a seated alternative exercise.",
+    "Show a camera-roll photo you'd never post publicly. You may choose a different harmless photo.",
+    "Give everyone in the room a sincere compliment.",
+    "Take three sips of your drink, or choose a non-alcoholic alternative.",
+    "Give a dramatic 30-second apology to an object in the room.",
+    "Let the group give you a ridiculous nickname for the next three turns."
+  ]
+}

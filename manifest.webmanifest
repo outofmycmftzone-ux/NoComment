@@ -1,0 +1,19 @@
+{
+  "name": "NO COMMENT \u2014 Adult Party Game",
+  "short_name": "NO COMMENT",
+  "description": "Truths, dares, confessions and questionable decisions.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#101010",
+  "theme_color": "#101010",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
