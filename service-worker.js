@@ -1,4 +1,5 @@
-const CACHE = "no-comment-v3";
+
+const CACHE = "no-comment-v4";
 
 const FILES = [
   "./",
@@ -14,6 +15,7 @@ self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE).then(cache => cache.addAll(FILES))
   );
+
   self.skipWaiting();
 });
 
@@ -22,11 +24,14 @@ self.addEventListener("activate", event => {
     caches.keys().then(keys =>
       Promise.all(
         keys
-          .filter(key => key.startsWith("no-comment-") && key !== CACHE)
+          .filter(key =>
+            key.startsWith("no-comment-") && key !== CACHE
+          )
           .map(key => caches.delete(key))
       )
     )
   );
+
   self.clients.claim();
 });
 
@@ -37,13 +42,35 @@ self.addEventListener("fetch", event => {
 
   if (url.origin !== self.location.origin) return;
 
+  const isCardsFile = url.pathname.endsWith("/cards.json");
+
+  if (isCardsFile) {
+    event.respondWith(
+      fetch(event.request, { cache: "no-cache" })
+        .then(response => {
+          if (response.ok) {
+            const copy = response.clone();
+
+            caches.open(CACHE).then(cache => {
+              cache.put(event.request, copy);
+            });
+          }
+
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then(cached => {
       if (cached) return cached;
 
       return fetch(event.request)
         .then(response => {
-          if (response && response.ok) {
+          if (response.ok) {
             const copy = response.clone();
 
             caches.open(CACHE).then(cache => {
@@ -59,7 +86,7 @@ self.addEventListener("fetch", event => {
           }
 
           return Response.error();
-        });
+        })
     })
   );
 });
