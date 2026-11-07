@@ -15,6 +15,7 @@ const state = {
 };
 
 let cards = null;
+let cardsReady = false;
 
 function show(id) {
   screens.forEach(screen => {
@@ -25,16 +26,13 @@ function show(id) {
 function createPlayer(name) {
   return {
     id: crypto.randomUUID(),
-    name: name
+    name
   };
 }
 
 function savePlayers() {
   try {
-    localStorage.setItem(
-      STORAGE,
-      JSON.stringify(state.players)
-    );
+    localStorage.setItem(STORAGE, JSON.stringify(state.players));
   } catch (error) {
     console.warn("Could not save players.", error);
   }
@@ -42,9 +40,7 @@ function savePlayers() {
 
 function loadPlayers() {
   try {
-    const saved = JSON.parse(
-      localStorage.getItem(STORAGE)
-    );
+    const saved = JSON.parse(localStorage.getItem(STORAGE));
 
     if (Array.isArray(saved) && saved.length) {
       state.players = saved.slice(0, 20).map(player => {
@@ -82,10 +78,7 @@ function renderPlayers() {
     const input = document.createElement("input");
     input.value = player.name;
     input.maxLength = 24;
-    input.setAttribute(
-      "aria-label",
-      `Player ${index + 1}`
-    );
+    input.setAttribute("aria-label", `Player ${index + 1}`);
 
     input.addEventListener("change", () => {
       player.name = input.value.trim() || `Player ${index + 1}`;
@@ -96,19 +89,20 @@ function renderPlayers() {
     const remove = document.createElement("button");
     remove.type = "button";
     remove.textContent = "×";
-    remove.setAttribute(
-      "aria-label",
-      `Remove ${player.name}`
-    );
+    remove.setAttribute("aria-label", `Remove ${player.name}`);
 
     remove.onclick = () => {
       if (state.players.length <= 2) {
-        $("message").textContent =
-          "You need at least two players.";
+        $("message").textContent = "You need at least two players.";
         return;
       }
 
       state.players.splice(index, 1);
+
+      if (state.index >= state.players.length) {
+        state.index = 0;
+      }
+
       savePlayers();
       renderPlayers();
     };
@@ -151,7 +145,7 @@ function next() {
 }
 
 function pickCard(deck, excludedId = null) {
-  const deckCards = cards[deck];
+  const deckCards = cards?.[deck];
 
   if (!Array.isArray(deckCards) || !deckCards.length) {
     return null;
@@ -189,13 +183,15 @@ function getCardText(item) {
     return item;
   }
 
-  if (item.levels) {
+  if (item?.levels) {
     return item.levels["1"] ||
-      Object.values(item.levels)[0] ||
+      Object.values(item.levels).find(value =>
+        typeof value === "string" && value.trim()
+      ) ||
       "";
   }
 
-  return item.text || "";
+  return item?.text || "";
 }
 
 function drawCard(deck) {
@@ -224,10 +220,7 @@ function renderCard() {
 
   const current = state.current;
 
-  $("category").textContent =
-    current.deck.toUpperCase();
-
-  $("intensity").hidden = true;
+  $("category").textContent = current.deck.toUpperCase();
 
   $("prompt").textContent = state.second
     ? `${current.text}\n\n— AND THEN —\n\n${state.second.text}`
@@ -254,10 +247,9 @@ function spendToken() {
 }
 
 function drawPunishment() {
-  if (!cards || !cards.punishment?.length) return;
+  if (!cards?.punishment?.length) return;
 
   const list = cards.punishment;
-
   const index = Math.floor(Math.random() * list.length);
 
   $("penalty").textContent = list[index];
@@ -266,14 +258,20 @@ function drawPunishment() {
 }
 
 async function loadCards() {
+  cardsReady = false;
+  $("begin").disabled = true;
+  $("message").textContent = "Loading card library...";
+
   try {
-    const response = await fetch("./cards.json");
+    const response = await fetch("./cards.json", {
+      cache: "no-store"
+    });
 
     if (!response.ok) {
-      throw new Error("Card library unavailable.");
+      throw new Error(`Card library request failed: HTTP ${response.status}`);
     }
 
-    cards = await response.json();
+    const data = await response.json();
 
     const requiredDecks = [
       "truth",
@@ -284,18 +282,51 @@ async function loadCards() {
     ];
 
     for (const deck of requiredDecks) {
-      if (!Array.isArray(cards[deck]) || !cards[deck].length) {
+      if (!Array.isArray(data[deck]) || !data[deck].length) {
         throw new Error(`Missing or empty deck: ${deck}`);
       }
     }
 
+    for (const deck of ["truth", "dare", "confession", "cross"]) {
+      for (let i = 0; i < data[deck].length; i++) {
+        const card = data[deck][i];
+
+        if (
+          !card ||
+          typeof card !== "object" ||
+          !card.id ||
+          !card.levels ||
+          typeof card.levels !== "object"
+        ) {
+          throw new Error(`${deck} card ${i + 1} has an invalid structure.`);
+        }
+      }
+    }
+
+    cards = data;
+    cardsReady = true;
+    $("begin").disabled = false;
+    $("message").textContent = "";
+
+    console.log("NO COMMENT cards loaded successfully.", {
+      truth: cards.truth.length,
+      dare: cards.dare.length,
+      confession: cards.confession.length,
+      cross: cards.cross.length,
+      punishment: cards.punishment.length
+    });
+
     return true;
 
   } catch (error) {
-    console.error(error);
+    cards = null;
+    cardsReady = false;
 
+    $("begin").disabled = true;
     $("message").textContent =
-      "The card library couldn't load. Connect to the internet and reload.";
+      `Card loading failed: ${error.message}`;
+
+    console.error("NO COMMENT card loading error:", error);
 
     return false;
   }
@@ -304,7 +335,10 @@ async function loadCards() {
 /* NAVIGATION */
 
 $("start").onclick = $("manage").onclick = () => {
-  $("message").textContent = "";
+  $("message").textContent = cardsReady
+    ? ""
+    : "Card library is still loading. Please wait.";
+
   renderPlayers();
   show("setup");
 };
@@ -323,8 +357,7 @@ $("add").onclick = () => {
   if (!name) return;
 
   if (state.players.length >= 20) {
-    $("message").textContent =
-      "The maximum is 20 players.";
+    $("message").textContent = "The maximum is 20 players.";
     return;
   }
 
@@ -347,14 +380,13 @@ $("new-name").addEventListener("keydown", event => {
 
 $("begin").onclick = () => {
   if (state.players.length < 2) {
-    $("message").textContent =
-      "Add at least two players.";
+    $("message").textContent = "Add at least two players.";
     return;
   }
 
-  if (!cards) {
+  if (!cardsReady || !cards) {
     $("message").textContent =
-      "The cards haven't loaded yet. Please try again.";
+      "The card library isn't ready. Please wait and try again.";
     return;
   }
 
@@ -379,7 +411,7 @@ $("begin").onclick = () => {
 
 document.querySelectorAll("[data-deck]").forEach(button => {
   button.onclick = () => {
-    if (!cards) return;
+    if (!cardsReady) return;
 
     drawCard(button.dataset.deck);
   };
@@ -398,8 +430,6 @@ $("penalty-done").onclick = next;
 $("skip").onclick = next;
 
 /* DOUBLE DOWN */
-
-$("double-intensity").hidden = true;
 
 $("double").onclick = () => {
   if (!state.current) return;
