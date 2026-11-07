@@ -1,147 +1,145 @@
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#101010">
-  <meta name="description" content="NO COMMENT — an adults-only party card game.">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="assets/icon.svg">
-  <link rel="stylesheet" href="styles.css">
-  <title>NO COMMENT</title>
-</head>
-<body>
-<main class="app">
-  <header>
-    <b>NO <i>COMMENT</i></b>
-    <small>THE AFTER-HOURS PARTY GAME</small>
-  </header>
-
-  <section id="home" class="screen active">
-    <div class="hero">
-      <small>TEN PLAYERS. FOUR DECKS. NO EASY WAY OUT.</small>
-      <h1>Say it.<br><em>Do it.</em><br>Or don't.</h1>
-      <p>Truths, dares, confessions and questionable decisions.</p>
-      <button id="start">START GAME ↗</button>
-    </div>
-    <nav>
-      <button id="manage">MANAGE PLAYERS</button>
-      <button id="rules">HOW TO PLAY</button>
-    </nav>
-  </section>
-
-  <section id="setup" class="screen">
-    <button class="back" data-go="home">← BACK</button>
-    <small>BEFORE THE TROUBLE STARTS</small>
-    <h2>Who's<br><em>playing?</em></h2>
-    <div id="players"></div>
-    <div class="add">
-      <input id="new-name" maxlength="24" placeholder="Add a player">
-      <button id="add">ADD</button>
-    </div>
-    <button id="begin" class="wide">LET'S GO ↗</button>
-    <p id="message"></p>
-  </section>
-
-  <section id="game" class="screen">
-    <div class="bar">
-      <button class="back" data-go="home">EXIT</button>
-      <small id="turn">TURN 01</small>
-    </div>
-
-    <small>IT'S YOUR TURN</small>
-    <h2 id="who"></h2>
-    <p id="reward-status"></p>
-
-    <div class="decks">
-      <button data-deck="truth">
-        <b>?</b>
-        <strong>TRUTH</strong>
-        <small>Answer honestly.</small>
-      </button>
-      <button data-deck="dare">
-        <b>!</b>
-        <strong>DARE</strong>
-        <small>Prove it.</small>
-      </button>
-      <button data-deck="confession">
-        <b>✳</b>
-        <strong>CONFESSION</strong>
-        <small>Get it off your chest.</small>
-      </button>
-      <button data-deck="cross">
-        <b>×</b>
-        <strong>CROSS THE LINE</strong>
-        <small>Proceed with caution.</small>
-      </button>
-    </div>
-
-    <footer>
-      <small>DOUBLE DOWN TOKENS: <span id="tokens">10</span></small>
-      <button id="skip">SKIP TURN →</button>
-    </footer>
-  </section>
-
-  <section id="card" class="screen">
-    <button id="card-back" class="back">← BACK TO DECKS</button>
-
-    <article>
-      <small id="category"></small>
-      <div id="prompt"></div>
-      <small class="stamp">NO COMMENT <i>✦</i></small>
-    </article>
-
-    <button id="use-reward" class="wide secondary" hidden>USE MY REWARD</button>
-    <button id="double" class="wide secondary">DOUBLE DOWN · 1 TOKEN</button>
-    <button id="done" class="wide">COMPLETED</button>
-    <button id="no-comment" class="wide secondary">NO COMMENT</button>
-  </section>
-
-  <section id="double-screen" class="screen">
-    <button id="double-back" class="back">← BACK TO CARD</button>
-    <small>ONE TOKEN. TWO WAYS TO MAKE IT WORSE.</small>
-    <h2>Double<br><em>down.</em></h2>
-    <button id="double-card" class="wide">DOUBLE THE CHALLENGE</button>
-    <p>Draw another card from the same deck. Complete both.</p>
-  </section>
-
-  <section id="reward-screen" class="screen">
-    <small>YOU EARNED IT</small>
-    <h2>Choose your<br><em>reward.</em></h2>
-    <p>Two rewards are drawn. Choose one to keep. The other goes back into the reward deck.</p>
-    <div id="reward-options"></div>
-    <p id="reward-message"></p>
-  </section>
-
-  <section id="punishment" class="screen">
-    <small>YOU CHOSE NO COMMENT</small>
-    <h2>Here's the<br><em>consequence.</em></h2>
-    <article>
-      <small>PUNISHMENT</small>
-      <div id="penalty"></div>
-      <small class="stamp">NO COMMENT <i>✦</i></small>
-    </article>
-    <button id="penalty-done" class="wide">I ACCEPT MY FATE</button>
-  </section>
-
-  <section id="rules-screen" class="screen">
-    <button class="back" data-go="home">← BACK</button>
-    <small>READ THIS BEFORE PLAYING</small>
-    <h2>The<br><em>rules.</em></h2>
-    <ol>
-      <li>Players take turns choosing a deck and drawing one card.</li>
-      <li>Complete the card, or choose NO COMMENT and draw a punishment.</li>
-      <li>Each player gets one Double Down token per game. Spend it to draw a second card from the same deck. Complete both to earn a reward.</li>
-      <li>After a successful Double Down, choose one of two randomly drawn rewards.</li>
-      <li>Each player can hold only one unused reward at a time. Use it before attempting another Double Down.</li>
-      <li>Cards do not repeat until that deck is exhausted.</li>
-      <li>Anyone can pass on unwanted contact, intimate disclosure or unsafe activity.</li>
-      <li>Drinking is optional. Never pressure anyone to consume alcohol.</li>
-    </ol>
-  </section>
-</main>
-
-<script src="app.js" defer></script>
-</body>
-</html>
+{
+  "rewards": [
+    {
+      "id": "golden-pass",
+      "name": "GOLDEN PASS",
+      "type": "self",
+      "description": "Skip one card without receiving a punishment.",
+      "action": "skip_card"
+    },
+    {
+      "id": "second-chance",
+      "name": "SECOND CHANCE",
+      "type": "self",
+      "description": "Discard your current card and draw another from the same deck.",
+      "action": "redraw_card"
+    },
+    {
+      "id": "shield",
+      "name": "SHIELD",
+      "type": "self",
+      "description": "Avoid one punishment when choosing NO COMMENT.",
+      "action": "avoid_punishment"
+    },
+    {
+      "id": "lucky-draw",
+      "name": "LUCKY DRAW",
+      "type": "self",
+      "description": "Draw two cards from your chosen deck and pick one.",
+      "action": "choose_card"
+    },
+    {
+      "id": "time-out",
+      "name": "TIME OUT",
+      "type": "self",
+      "description": "Skip your next turn without penalty.",
+      "action": "skip_turn"
+    },
+    {
+      "id": "keep-the-spotlight",
+      "name": "KEEP THE SPOTLIGHT",
+      "type": "self",
+      "description": "After completing your next challenge, take another turn.",
+      "action": "extra_turn"
+    },
+    {
+      "id": "wild-card",
+      "name": "WILD CARD",
+      "type": "self",
+      "description": "Choose a different deck after seeing your first card.",
+      "action": "change_deck"
+    },
+    {
+      "id": "rewind",
+      "name": "REWIND",
+      "type": "self",
+      "description": "Return your current card and draw a fresh one.",
+      "action": "return_card"
+    },
+    {
+      "id": "free-choice",
+      "name": "FREE CHOICE",
+      "type": "self",
+      "description": "Choose any deck for your next turn.",
+      "action": "choose_deck"
+    },
+    {
+      "id": "double-or-nothing",
+      "name": "DOUBLE OR NOTHING",
+      "type": "self",
+      "description": "Draw a second card and attempt both without spending another token.",
+      "action": "free_double"
+    },
+    {
+      "id": "your-problem-now",
+      "name": "YOUR PROBLEM NOW",
+      "type": "other",
+      "description": "Choose another player to draw an additional card.",
+      "action": "extra_card"
+    },
+    {
+      "id": "pick-your-poison",
+      "name": "PICK YOUR POISON",
+      "type": "other",
+      "description": "Choose the deck another player must draw from on their next turn.",
+      "action": "assign_deck"
+    },
+    {
+      "id": "hot-seat",
+      "name": "HOT SEAT",
+      "type": "other",
+      "description": "Choose another player to take the next turn.",
+      "action": "next_player"
+    },
+    {
+      "id": "tag-youre-it",
+      "name": "TAG, YOU'RE IT",
+      "type": "other",
+      "description": "Choose another player to draw from the same deck as you.",
+      "action": "same_deck"
+    },
+    {
+      "id": "dealer-choice",
+      "name": "DEALER'S CHOICE",
+      "type": "other",
+      "description": "Choose the deck another player must draw from.",
+      "action": "force_deck"
+    },
+    {
+      "id": "encore",
+      "name": "ENCORE",
+      "type": "other",
+      "description": "Choose another player to draw an additional card after their next challenge.",
+      "action": "encore"
+    },
+    {
+      "id": "switcheroo",
+      "name": "SWITCHEROO",
+      "type": "other",
+      "description": "Swap your next turn with another willing player.",
+      "action": "swap_turn"
+    },
+    {
+      "id": "double-trouble",
+      "name": "DOUBLE TROUBLE",
+      "type": "other",
+      "description": "Choose another player to draw two cards and pick one.",
+      "action": "forced_choice"
+    },
+    {
+      "id": "spotlight",
+      "name": "THE SPOTLIGHT",
+      "type": "other",
+      "description": "Choose another player to take an immediate turn.",
+      "action": "immediate_turn"
+    },
+    {
+      "id": "group-pressure",
+      "name": "GROUP PRESSURE",
+      "type": "other",
+      "description": "Choose another player to draw from the Cross the Line deck.",
+      "action": "force_cross"
+    }
+  ]
+}
