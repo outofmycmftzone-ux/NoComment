@@ -1,5 +1,5 @@
 
-const CACHE = "no-comment-v9";
+const CACHE = "no-comment-v10";
 
 const FILES = [
   "./",
@@ -7,6 +7,7 @@ const FILES = [
   "./styles.css",
   "./app.js",
   "./cards.json",
+  "./rewards.json",
   "./manifest.webmanifest",
   "./assets/icon.svg"
 ];
@@ -42,9 +43,11 @@ self.addEventListener("fetch", event => {
 
   if (url.origin !== self.location.origin) return;
 
-  const isCardsFile = url.pathname.endsWith("/cards.json");
+  const isDataFile =
+    url.pathname.endsWith("/cards.json") ||
+    url.pathname.endsWith("/rewards.json");
 
-  if (isCardsFile) {
+  if (isDataFile) {
     event.respondWith(
       fetch(event.request, { cache: "no-cache" })
         .then(response => {
@@ -86,7 +89,7 @@ self.addEventListener("fetch", event => {
           }
 
           return Response.error();
-        })
+        });
     })
   );
 });
