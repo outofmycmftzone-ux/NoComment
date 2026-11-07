@@ -3,108 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NO COMMENT - Card Structure Test</title>
+<title>NO COMMENT Card Test</title>
 <style>
-body {
-  background: #111;
-  color: #eee;
-  font-family: Arial, sans-serif;
-  padding: 24px;
-  line-height: 1.6;
-}
-h2 { color: #d8b46a; }
-pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  background: #222;
-  padding: 16px;
-  border-radius: 8px;
-}
+body{background:#111;color:#eee;font-family:Arial;padding:24px;line-height:1.6}
+h2{color:#d8b46a}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#222;padding:16px;border-radius:8px}
 </style>
 </head>
 <body>
 <h2>NO COMMENT — Card Structure Test</h2>
 <p>Checking individual cards...</p>
 <pre id="result">Please wait...</pre>
-
 <script>
-async function testCards() {
-  const output = document.getElementById("result");
+async function testCards(){
+const output=document.getElementById("result");
+try{
+const response=await fetch("./cards.json?test="+Date.now());
+if(!response.ok)throw new Error("HTTP error: "+response.status);
+const data=await response.json();
+let report="";
+let totalProblems=0;
 
-  try {
-    const response = await fetch("./cards.json?test=" + Date.now());
+for(const deck of ["truth","dare","confession","cross"]){
+const cards=data[deck];
+let problems=0;
+report+="\n"+deck.toUpperCase()+"\n";
 
-    if (!response.ok) {
-      throw new Error("HTTP error: " + response.status);
-    }
+cards.forEach((card,index)=>{
+if(!card||typeof card!=="object"||Array.isArray(card)){
+report+="Card "+(index+1)+": NOT AN OBJECT\n";
+problems++;
+return;
+}
+if(!card.id){
+report+="Card "+(index+1)+": MISSING ID\n";
+problems++;
+}
+if(!card.levels||typeof card.levels!=="object"){
+report+="Card "+(index+1)+": MISSING LEVELS\n";
+problems++;
+}else if(!card.levels["1"]&&!Object.values(card.levels).some(value=>typeof value==="string"&&value.trim())){
+report+="Card "+(index+1)+": NO USABLE TEXT\n";
+problems++;
+}
+});
 
-    const data = await response.json();
-    let report = "";
-
-    for (const deck of ["truth", "dare", "confession", "cross"]) {
-      const cards = data[deck];
-
-      report += "\n" + deck.toUpperCase() + "\n";
-      let problems = 0;
-
-      cards.forEach((card, index) => {
-        if (!card || typeof card !== "object" || Array.isArray(card)) {
-          report += "Card " + (index + 1) + ": NOT AN OBJECT\n";
-          problems++;
-          return;
-        }
-
-        if (!card.id) {
-          report += "Card " + (index + 1) + ": MISSING ID\n";
-          problems++;
-        }
-
-        if (!card.levels || typeof card.levels !== "object") {
-          report += "Card " + (index + 1) + ": MISSING LEVELS\n";
-          problems++;
-        } else if (
-          !card.levels["1"] &&
-          !Object.values(card.levels).some(value => typeof value === "string" && value.trim())
-        ) {
-          report += "Card " + (index + 1) + ": NO USABLE TEXT\n";
-          problems++;
-        }
-      });
-
-      report += "Cards checked: " + cards.length + "\n";
-      report += "Problems found: " + problems + "\n";
-    }
-
-    report += "\nPUNISHMENT\n";
-
-    const punishments = data.punishment;
-    let punishmentProblems = 0;
-
-    punishments.forEach((item, index) => {
-      if (typeof item !== "string" || !item.trim()) {
-        report += "Card " + (index + 1) + ": INVALID PUNISHMENT\n";
-        punishmentProblems++;
-      }
-    });
-
-    report += "Cards checked: " + punishments.length + "\n";
-    report += "Problems found: " + punishmentProblems + "\n";
-
-    report += "\nSAMPLE CARD STRUCTURE\n";
-    report += JSON.stringify(data.truth[0], null, 2);
-
-    report += "\n\nFINAL RESULT: ";
-    report += problems === 0 && punishmentProblems === 0
-      ? "ALL CARD STRUCTURES PASSED"
-      : "CARD STRUCTURE PROBLEMS FOUND";
-
-    output.textContent = report;
-
-  } catch (error) {
-    output.textContent = "TEST FAILED: " + error.message;
-  }
+totalProblems+=problems;
+report+="Cards checked: "+cards.length+"\n";
+report+="Problems found: "+problems+"\n";
 }
 
+report+="\nPUNISHMENT\n";
+let punishmentProblems=0;
+
+data.punishment.forEach((item,index)=>{
+if(typeof item!=="string"||!item.trim()){
+report+="Card "+(index+1)+": INVALID PUNISHMENT\n";
+punishmentProblems++;
+}
+});
+
+totalProblems+=punishmentProblems;
+report+="Cards checked: "+data.punishment.length+"\n";
+report+="Problems found: "+punishmentProblems+"\n";
+report+="\nSAMPLE CARD STRUCTURE\n";
+report+=JSON.stringify(data.truth[0],null,2);
+report+="\n\nFINAL RESULT: "+(totalProblems===0?"ALL CARD STRUCTURES PASSED":"CARD STRUCTURE PROBLEMS FOUND");
+
+output.textContent=report;
+}catch(error){
+output.textContent="TEST FAILED: "+error.message;
+}
+}
 testCards();
 </script>
 </body>
