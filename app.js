@@ -1,4 +1,3 @@
-
 const $ = id => document.getElementById(id);
 const screens = [...document.querySelectorAll(".screen")];
 
@@ -28,6 +27,84 @@ let rewardsReady = false;
 function show(id) {
   screens.forEach(screen => {
     screen.classList.toggle("active", screen.id === id);
+  });
+}
+
+function showChoiceModal(title, subtitle, options, cancelText = "CANCEL") {
+  return new Promise(resolve => {
+    const overlay = document.createElement("div");
+    overlay.className = "choice-overlay";
+
+    const panel = document.createElement("div");
+    panel.className = "choice-panel";
+
+    const top = document.createElement("div");
+    top.className = "choice-top";
+
+    const heading = document.createElement("h2");
+    heading.textContent = title;
+
+    const description = document.createElement("p");
+    description.textContent = subtitle || "";
+
+    top.append(heading, description);
+
+    const optionList = document.createElement("div");
+    optionList.className = "choice-options";
+
+    let finished = false;
+
+    const close = value => {
+      if (finished) return;
+      finished = true;
+      document.removeEventListener("keydown", onKeyDown);
+      overlay.remove();
+      resolve(value);
+    };
+
+    const onKeyDown = event => {
+      if (event.key === "Escape") {
+        close(null);
+      }
+    };
+
+    options.forEach(option => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "choice-option";
+
+      const label = document.createElement("strong");
+      label.textContent = option.label;
+      button.append(label);
+
+      if (option.description) {
+        const detail = document.createElement("span");
+        detail.textContent = option.description;
+        button.append(detail);
+      }
+
+      button.onclick = () => close(option.value);
+      optionList.append(button);
+    });
+
+    const cancel = document.createElement("button");
+    cancel.type = "button";
+    cancel.className = "choice-cancel";
+    cancel.textContent = cancelText;
+    cancel.onclick = () => close(null);
+
+    panel.append(top, optionList, cancel);
+    overlay.append(panel);
+
+    overlay.addEventListener("click", event => {
+      if (event.target === overlay) close(null);
+    });
+
+    document.addEventListener("keydown", onKeyDown);
+    document.body.append(overlay);
+
+    const firstOption = optionList.querySelector("button");
+    if (firstOption) firstOption.focus();
   });
 }
 
@@ -258,6 +335,14 @@ function pickCard(deck, excludedId = null) {
   return picked;
 }
 
+function returnCardToDeck(deck, item) {
+  if (!item?.id || !state.used[deck]) return;
+
+  state.used[deck] = state.used[deck].filter(
+    id => id !== item.id
+  );
+}
+
 function getCardText(item) {
   if (typeof item === "string") {
     return item;
@@ -438,7 +523,7 @@ function finishCard() {
   next();
 }
 
-function chooseTarget() {
+async function chooseTarget() {
   const current = currentPlayer();
 
   const available = state.players
@@ -446,28 +531,31 @@ function chooseTarget() {
 
   if (!available.length) return null;
 
-  const names = available
-    .map((player, index) => `${index + 1}. ${player.name}`)
-    .join("\n");
+  const options = available.map(player => ({
+    label: player.name,
+    value: player
+  }));
 
-  const answer = window.prompt(
-    `Choose a player:\n${names}\n\nEnter a number:`
+  return showChoiceModal(
+    "CHOOSE A PLAYER",
+    "Who will receive the effect?",
+    options
   );
-
-  if (answer === null) return null;
-
-  const index = Number(answer) - 1;
-
-  return available[index] || null;
 }
 
-function chooseDeck() {
-  const answer = window.prompt(
-    "Choose a deck:\n1. Truth\n2. Dare\n3. Confession\n4. Cross"
-  );
+async function chooseDeck() {
+  const decks = [
+    { label: "TRUTH", value: "truth" },
+    { label: "DARE", value: "dare" },
+    { label: "CONFESSION", value: "confession" },
+    { label: "CROSS", value: "cross" }
+  ];
 
-  const decks = ["truth", "dare", "confession", "cross"];
-  return decks[Number(answer) - 1] || null;
+  return showChoiceModal(
+    "CHOOSE A DECK",
+    "Select the deck for this effect.",
+    decks
+  );
 }
 
 function consumeReward() {
@@ -478,7 +566,7 @@ function consumeReward() {
   renderTurn();
 }
 
-function activateReward() {
+async function activateReward() {
   const player = currentPlayer();
   const reward = player.reward;
 
@@ -515,16 +603,38 @@ function activateReward() {
 
     if (!first || !second) return;
 
-    const useFirst = window.confirm(
-      `Choose your card:\n\nFIRST:\n${getCardText(first)}\n\nSECOND:\n${getCardText(second)}\n\nPress OK for the first card or Cancel for the second.`
+    const chosen = await showChoiceModal(
+      "LUCKY DRAW",
+      "Choose one card to play.",
+      [
+        {
+          label: "FIRST CARD",
+          description: getCardText(first),
+          value: "first"
+        },
+        {
+          label: "SECOND CARD",
+          description: getCardText(second),
+          value: "second"
+        }
+      ]
     );
 
-    const chosen = useFirst ? first : second;
+    if (!chosen) {
+      returnCardToDeck(deck, first);
+      returnCardToDeck(deck, second);
+      return;
+    }
+
+    const selected = chosen === "first" ? first : second;
+    const unselected = chosen === "first" ? second : first;
+
+    returnCardToDeck(deck, unselected);
 
     state.current = {
       deck,
-      item: chosen,
-      text: getCardText(chosen)
+      item: selected,
+      text: getCardText(selected)
     };
 
     state.second = null;
@@ -563,7 +673,7 @@ function activateReward() {
     return;
   }
 
-  const target = chooseTarget();
+  const target = await chooseTarget();
 
   if (!target) return;
 
@@ -579,7 +689,7 @@ function activateReward() {
     action === "assign_deck" ||
     action === "force_deck"
   ) {
-    const deck = chooseDeck();
+    const deck = await chooseDeck();
     if (!deck) return;
     target.forcedDeck = deck;
   }
@@ -608,9 +718,7 @@ function activateReward() {
   }
 
   consumeReward();
-}
-
-async function loadCards() {
+}async function loadCards() {
   cardsReady = false;
   $("begin").disabled = true;
   $("message").textContent = "Loading card library...";
