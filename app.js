@@ -11,11 +11,18 @@ const state = {
   used: {},
   tokens: new Set(),
   current: null,
-  second: null
+  second: null,
+  doubleSuccess: false,
+  extraTurn: false,
+  extraCardInProgress: false,
+  freeDouble: false,
+  nextOverride: null
 };
 
 let cards = null;
+let rewards = [];
 let cardsReady = false;
+let rewardsReady = false;
 
 function show(id) {
   screens.forEach(screen => {
@@ -26,7 +33,11 @@ function show(id) {
 function createPlayer(name) {
   return {
     id: crypto.randomUUID(),
-    name
+    name,
+    reward: null,
+    forcedDeck: null,
+    pendingExtra: false,
+    pendingDouble: false
   };
 }
 
@@ -50,7 +61,11 @@ function loadPlayers() {
 
         return {
           id: player.id || crypto.randomUUID(),
-          name: player.name || "Player"
+          name: player.name || "Player",
+          reward: null,
+          forcedDeck: null,
+          pendingExtra: false,
+          pendingDouble: false
         };
       });
     }
@@ -112,6 +127,10 @@ function renderPlayers() {
   });
 }
 
+function currentPlayer() {
+  return state.players[state.index];
+}
+
 function renderTurn() {
   if (!state.players.length) {
     show("setup");
@@ -119,13 +138,33 @@ function renderTurn() {
     return;
   }
 
-  $("who").textContent = state.players[state.index].name;
+  const player = currentPlayer();
 
+  $("who").textContent = player.name;
   $("turn").textContent =
     `TURN ${String(state.turn).padStart(2, "0")}`;
 
   $("tokens").textContent =
     state.players.length - state.tokens.size;
+
+  if (player.reward && state.turn > player.reward.earnedTurn) {
+    player.reward.ready = true;
+  }
+
+  if (player.reward) {
+    $("reward-status").textContent = player.reward.ready
+      ? `YOUR REWARD: ${player.reward.name}`
+      : `REWARD EARNED: ${player.reward.name} · AVAILABLE NEXT TURN`;
+  } else {
+    $("reward-status").textContent = "";
+  }
+
+  document.querySelectorAll("[data-deck]").forEach(button => {
+    button.disabled = Boolean(
+      player.forcedDeck &&
+      button.dataset.deck !== player.forcedDeck
+    );
+  });
 }
 
 function next() {
@@ -134,11 +173,32 @@ function next() {
     return;
   }
 
-  state.index = (state.index + 1) % state.players.length;
-  state.turn++;
+  if (state.extraTurn) {
+    state.extraTurn = false;
+    state.turn++;
+  } else if (state.nextOverride) {
+    const targetIndex = state.players.findIndex(
+      player => player.id === state.nextOverride
+    );
+
+    if (targetIndex !== -1) {
+      state.index = targetIndex;
+    } else {
+      state.index = (state.index + 1) % state.players.length;
+    }
+
+    state.nextOverride = null;
+    state.turn++;
+  } else {
+    state.index = (state.index + 1) % state.players.length;
+    state.turn++;
+  }
 
   state.current = null;
   state.second = null;
+  state.doubleSuccess = false;
+  state.extraCardInProgress = false;
+  state.freeDouble = false;
 
   renderTurn();
   show("game");
@@ -173,7 +233,9 @@ function pickCard(deck, excludedId = null) {
   const picked =
     available[Math.floor(Math.random() * available.length)];
 
-  state.used[deck].push(picked.id);
+  if (picked.id) {
+    state.used[deck].push(picked.id);
+  }
 
   return picked;
 }
@@ -195,6 +257,13 @@ function getCardText(item) {
 }
 
 function drawCard(deck) {
+  const player = currentPlayer();
+
+  if (player.forcedDeck) {
+    deck = player.forcedDeck;
+    player.forcedDeck = null;
+  }
+
   const item = pickCard(deck);
 
   if (!item) {
@@ -210,6 +279,7 @@ function drawCard(deck) {
   };
 
   state.second = null;
+  state.doubleSuccess = false;
 
   renderCard();
   show("card");
@@ -218,25 +288,31 @@ function drawCard(deck) {
 function renderCard() {
   if (!state.current) return;
 
-  const current = state.current;
+  const player = currentPlayer();
 
-  $("category").textContent = current.deck.toUpperCase();
+  $("category").textContent =
+    state.current.deck.toUpperCase();
 
   $("prompt").textContent = state.second
-    ? `${current.text}\n\n— AND THEN —\n\n${state.second.text}`
-    : current.text;
+    ? `${state.current.text}\n\n— AND THEN —\n\n${state.second.text}`
+    : state.current.text;
 
-  const tokenUsed =
-    state.tokens.has(state.players[state.index].id);
+  const tokenUsed = state.tokens.has(player.id);
+  const hasReward = Boolean(player.reward);
 
-  $("double").hidden = tokenUsed;
-  $("double").disabled = tokenUsed;
+  $("double").hidden = tokenUsed || hasReward;
+  $("double").disabled = tokenUsed || hasReward;
+
+  $("use-reward").hidden = !(
+    player.reward &&
+    player.reward.ready
+  );
 }
 
 function spendToken() {
-  const player = state.players[state.index];
+  const player = currentPlayer();
 
-  if (!player || state.tokens.has(player.id)) {
+  if (!player || state.tokens.has(player.id) || player.reward) {
     return false;
   }
 
@@ -247,14 +323,275 @@ function spendToken() {
 }
 
 function drawPunishment() {
+  const player = currentPlayer();
+
+  if (player.shielded) {
+    player.shielded = false;
+    $("penalty").textContent = "Your reward protected you. No punishment this time.";
+    show("punishment");
+    return;
+  }
+
   if (!cards?.punishment?.length) return;
 
   const list = cards.punishment;
   const index = Math.floor(Math.random() * list.length);
 
   $("penalty").textContent = list[index];
-
   show("punishment");
+}
+
+function drawRewardChoices() {
+  if (!rewardsReady || !rewards.length) {
+    $("reward-message").textContent =
+      "The reward deck hasn't loaded. Please try again.";
+    show("reward-screen");
+    return;
+  }
+
+  const shuffled = [...rewards].sort(() => Math.random() - 0.5);
+  const choices = shuffled.slice(0, 2);
+
+  $("reward-options").innerHTML = "";
+
+  choices.forEach(reward => {
+    const button = document.createElement("button");
+    button.className = "wide secondary";
+    button.type = "button";
+
+    const name = document.createElement("strong");
+    name.textContent = reward.name;
+
+    const description = document.createElement("p");
+    description.textContent = reward.description;
+
+    button.append(name, description);
+
+    button.onclick = () => chooseReward(reward);
+
+    $("reward-options").append(button);
+  });
+
+  $("reward-message").textContent = "";
+  show("reward-screen");
+}
+
+function chooseReward(reward) {
+  const player = currentPlayer();
+
+  if (player.reward) {
+    $("reward-message").textContent =
+      "You already have an unused reward.";
+    return;
+  }
+
+  player.reward = {
+    ...reward,
+    earnedTurn: state.turn,
+    ready: false
+  };
+
+  savePlayers();
+
+  $("reward-options").innerHTML = "";
+
+  $("reward-message").textContent =
+    `${player.name} earned ${reward.name}. It will be available on their next turn.`;
+
+  const button = document.createElement("button");
+  button.className = "wide";
+  button.textContent = "CONTINUE";
+  button.onclick = next;
+
+  $("reward-options").append(button);
+}
+
+function finishCard() {
+  const player = currentPlayer();
+
+  if (player.pendingExtra && !state.extraCardInProgress) {
+    player.pendingExtra = false;
+    state.extraCardInProgress = true;
+
+    const deck = state.current.deck;
+    drawCard(deck);
+    return;
+  }
+
+  if (state.doubleSuccess) {
+    state.doubleSuccess = false;
+    drawRewardChoices();
+    return;
+  }
+
+  next();
+}
+
+function chooseTarget() {
+  const current = currentPlayer();
+
+  const available = state.players
+    .filter(player => player.id !== current.id);
+
+  if (!available.length) return null;
+
+  const names = available
+    .map((player, index) => `${index + 1}. ${player.name}`)
+    .join("\n");
+
+  const answer = window.prompt(
+    `Choose a player:\n${names}\n\nEnter a number:`
+  );
+
+  if (answer === null) return null;
+
+  const index = Number(answer) - 1;
+
+  return available[index] || null;
+}
+
+function chooseDeck() {
+  const answer = window.prompt(
+    "Choose a deck:\n1. Truth\n2. Dare\n3. Confession\n4. Cross"
+  );
+
+  const decks = ["truth", "dare", "confession", "cross"];
+  return decks[Number(answer) - 1] || null;
+}
+
+function consumeReward() {
+  const player = currentPlayer();
+  player.reward = null;
+  savePlayers();
+  renderCard();
+  renderTurn();
+}
+
+function activateReward() {
+  const player = currentPlayer();
+  const reward = player.reward;
+
+  if (!reward || !reward.ready || !state.current) return;
+
+  const action = reward.action;
+
+  if (action === "avoid_punishment") {
+    player.shielded = true;
+    consumeReward();
+    return;
+  }
+
+  if (action === "skip_card" || action === "skip_turn") {
+    consumeReward();
+    next();
+    return;
+  }
+
+  if (
+    action === "redraw_card" ||
+    action === "return_card"
+  ) {
+    const deck = state.current.deck;
+    consumeReward();
+    drawCard(deck);
+    return;
+  }
+
+  if (action === "choose_card") {
+    const deck = state.current.deck;
+    const first = pickCard(deck);
+    const second = pickCard(deck, first?.id);
+
+    if (!first || !second) return;
+
+    const useFirst = window.confirm(
+      `Choose your card:\n\nFIRST:\n${getCardText(first)}\n\nSECOND:\n${getCardText(second)}\n\nPress OK for the first card or Cancel for the second.`
+    );
+
+    const chosen = useFirst ? first : second;
+
+    state.current = {
+      deck,
+      item: chosen,
+      text: getCardText(chosen)
+    };
+
+    state.second = null;
+    consumeReward();
+    renderCard();
+    show("card");
+    return;
+  }
+
+  if (action === "extra_turn") {
+    state.extraTurn = true;
+    consumeReward();
+    return;
+  }
+
+  if (action === "change_deck" || action === "choose_deck") {
+    consumeReward();
+    state.current = null;
+    state.second = null;
+    renderTurn();
+    show("game");
+    $("reward-status").textContent =
+      "Choose a new deck for this turn.";
+    return;
+  }
+
+  if (action === "free_double") {
+    state.freeDouble = true;
+    consumeReward();
+    show("double-screen");
+    return;
+  }
+
+  const target = chooseTarget();
+
+  if (!target) return;
+
+  if (
+    action === "extra_card" ||
+    action === "encore" ||
+    action === "immediate_turn"
+  ) {
+    target.pendingExtra = true;
+  }
+
+  if (
+    action === "assign_deck" ||
+    action === "force_deck"
+  ) {
+    const deck = chooseDeck();
+    if (!deck) return;
+    target.forcedDeck = deck;
+  }
+
+  if (action === "force_cross") {
+    target.forcedDeck = "cross";
+  }
+
+  if (action === "same_deck") {
+    target.forcedDeck = state.current.deck;
+  }
+
+  if (action === "forced_choice") {
+    target.pendingDouble = true;
+  }
+
+  if (
+    action === "next_player" ||
+    action === "swap_turn"
+  ) {
+    state.nextOverride = target.id;
+  }
+
+  if (action === "immediate_turn") {
+    state.nextOverride = target.id;
+  }
+
+  consumeReward();
 }
 
 async function loadCards() {
@@ -305,16 +642,8 @@ async function loadCards() {
 
     cards = data;
     cardsReady = true;
-    $("begin").disabled = false;
-    $("message").textContent = "";
 
-    console.log("NO COMMENT cards loaded successfully.", {
-      truth: cards.truth.length,
-      dare: cards.dare.length,
-      confession: cards.confession.length,
-      cross: cards.cross.length,
-      punishment: cards.punishment.length
-    });
+    console.log("NO COMMENT cards loaded successfully.");
 
     return true;
 
@@ -322,11 +651,57 @@ async function loadCards() {
     cards = null;
     cardsReady = false;
 
-    $("begin").disabled = true;
     $("message").textContent =
       `Card loading failed: ${error.message}`;
 
     console.error("NO COMMENT card loading error:", error);
+    return false;
+  }
+}
+
+async function loadRewards() {
+  rewardsReady = false;
+
+  try {
+    const response = await fetch("./rewards.json", {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error(`Reward library request failed: HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data.rewards) || data.rewards.length < 2) {
+      throw new Error("The reward deck needs at least two rewards.");
+    }
+
+    for (const reward of data.rewards) {
+      if (
+        !reward.id ||
+        !reward.name ||
+        !reward.description ||
+        !reward.action
+      ) {
+        throw new Error("A reward is missing required information.");
+      }
+    }
+
+    rewards = data.rewards;
+    rewardsReady = true;
+
+    console.log(`${rewards.length} rewards loaded successfully.`);
+
+    return true;
+
+  } catch (error) {
+    rewards = [];
+    rewardsReady = false;
+
+    console.error("NO COMMENT reward loading error:", error);
+    $("message").textContent =
+      `Reward loading failed: ${error.message}`;
 
     return false;
   }
@@ -335,9 +710,10 @@ async function loadCards() {
 /* NAVIGATION */
 
 $("start").onclick = $("manage").onclick = () => {
-  $("message").textContent = cardsReady
-    ? ""
-    : "Card library is still loading. Please wait.";
+  $("message").textContent =
+    cardsReady && rewardsReady
+      ? ""
+      : "Game files are still loading. Please wait.";
 
   renderPlayers();
   show("setup");
@@ -384,9 +760,9 @@ $("begin").onclick = () => {
     return;
   }
 
-  if (!cardsReady || !cards) {
+  if (!cardsReady || !cards || !rewardsReady) {
     $("message").textContent =
-      "The card library isn't ready. Please wait and try again.";
+      "The game files aren't ready. Please wait and try again.";
     return;
   }
 
@@ -400,6 +776,19 @@ $("begin").onclick = () => {
   state.tokens.clear();
   state.current = null;
   state.second = null;
+  state.doubleSuccess = false;
+  state.extraTurn = false;
+  state.extraCardInProgress = false;
+  state.freeDouble = false;
+  state.nextOverride = null;
+
+  state.players.forEach(player => {
+    player.reward = null;
+    player.forcedDeck = null;
+    player.pendingExtra = false;
+    player.pendingDouble = false;
+    player.shielded = false;
+  });
 
   $("message").textContent = "";
 
@@ -413,7 +802,32 @@ document.querySelectorAll("[data-deck]").forEach(button => {
   button.onclick = () => {
     if (!cardsReady) return;
 
-    drawCard(button.dataset.deck);
+    const player = currentPlayer();
+
+    if (
+      player.forcedDeck &&
+      button.dataset.deck !== player.forcedDeck
+    ) {
+      return;
+    }
+
+    const deck = button.dataset.deck;
+    drawCard(deck);
+
+    if (player.pendingDouble && state.current) {
+      player.pendingDouble = false;
+
+      const item = pickCard(deck, state.current.item.id);
+
+      if (item) {
+        state.second = {
+          id: item.id,
+          text: getCardText(item)
+        };
+
+        renderCard();
+      }
+    }
   };
 });
 
@@ -421,13 +835,15 @@ document.querySelectorAll("[data-deck]").forEach(button => {
 
 $("card-back").onclick = () => show("game");
 
-$("done").onclick = next;
+$("done").onclick = finishCard;
 
 $("no-comment").onclick = drawPunishment;
 
 $("penalty-done").onclick = next;
 
 $("skip").onclick = next;
+
+$("use-reward").onclick = activateReward;
 
 /* DOUBLE DOWN */
 
@@ -436,6 +852,7 @@ $("double").onclick = () => {
 
   if (!spendToken()) return;
 
+  state.doubleSuccess = true;
   show("double-screen");
 };
 
@@ -458,6 +875,9 @@ $("double-card").onclick = () => {
     text: getCardText(item)
   };
 
+  state.doubleSuccess = !state.freeDouble || state.doubleSuccess;
+  state.freeDouble = false;
+
   renderCard();
   show("card");
 };
@@ -468,7 +888,17 @@ async function init() {
   loadPlayers();
   renderPlayers();
 
-  await loadCards();
+  const results = await Promise.all([
+    loadCards(),
+    loadRewards()
+  ]);
+
+  if (results.every(Boolean)) {
+    $("begin").disabled = false;
+    $("message").textContent = "";
+  } else {
+    $("begin").disabled = true;
+  }
 }
 
 init();
