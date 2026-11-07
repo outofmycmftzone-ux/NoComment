@@ -13,7 +13,6 @@
 </head>
 <body>
 <main class="app">
-
   <header>
     <b>NO <i>COMMENT</i></b>
     <small>THE AFTER-HOURS PARTY GAME</small>
@@ -53,6 +52,7 @@
 
     <small>IT'S YOUR TURN</small>
     <h2 id="who"></h2>
+    <p id="reward-status"></p>
 
     <div class="decks">
       <button data-deck="truth">
@@ -60,19 +60,16 @@
         <strong>TRUTH</strong>
         <small>Answer honestly.</small>
       </button>
-
       <button data-deck="dare">
         <b>!</b>
         <strong>DARE</strong>
         <small>Prove it.</small>
       </button>
-
       <button data-deck="confession">
         <b>✳</b>
         <strong>CONFESSION</strong>
         <small>Get it off your chest.</small>
       </button>
-
       <button data-deck="cross">
         <b>×</b>
         <strong>CROSS THE LINE</strong>
@@ -95,6 +92,7 @@
       <small class="stamp">NO COMMENT <i>✦</i></small>
     </article>
 
+    <button id="use-reward" class="wide secondary" hidden>USE MY REWARD</button>
     <button id="double" class="wide secondary">DOUBLE DOWN · 1 TOKEN</button>
     <button id="done" class="wide">COMPLETED</button>
     <button id="no-comment" class="wide secondary">NO COMMENT</button>
@@ -102,43 +100,46 @@
 
   <section id="double-screen" class="screen">
     <button id="double-back" class="back">← BACK TO CARD</button>
-
     <small>ONE TOKEN. TWO WAYS TO MAKE IT WORSE.</small>
     <h2>Double<br><em>down.</em></h2>
-
     <button id="double-card" class="wide">DOUBLE THE CHALLENGE</button>
     <p>Draw another card from the same deck. Complete both.</p>
+  </section>
+
+  <section id="reward-screen" class="screen">
+    <small>YOU EARNED IT</small>
+    <h2>Choose your<br><em>reward.</em></h2>
+    <p>Two rewards are drawn. Choose one to keep. The other goes back into the reward deck.</p>
+    <div id="reward-options"></div>
+    <p id="reward-message"></p>
   </section>
 
   <section id="punishment" class="screen">
     <small>YOU CHOSE NO COMMENT</small>
     <h2>Here's the<br><em>consequence.</em></h2>
-
     <article>
       <small>PUNISHMENT</small>
       <div id="penalty"></div>
       <small class="stamp">NO COMMENT <i>✦</i></small>
     </article>
-
     <button id="penalty-done" class="wide">I ACCEPT MY FATE</button>
   </section>
 
   <section id="rules-screen" class="screen">
     <button class="back" data-go="home">← BACK</button>
-
     <small>READ THIS BEFORE PLAYING</small>
     <h2>The<br><em>rules.</em></h2>
-
     <ol>
       <li>Players take turns choosing a deck and drawing one card.</li>
       <li>Complete the card, or choose NO COMMENT and draw a punishment.</li>
-      <li>Each player gets one Double Down token per game. Spend it to draw a second card from the same deck. Complete both.</li>
+      <li>Each player gets one Double Down token per game. Spend it to draw a second card from the same deck. Complete both to earn a reward.</li>
+      <li>After a successful Double Down, choose one of two randomly drawn rewards.</li>
+      <li>Each player can hold only one unused reward at a time. Use it before attempting another Double Down.</li>
       <li>Cards do not repeat until that deck is exhausted.</li>
       <li>Anyone can pass on unwanted contact, intimate disclosure or unsafe activity.</li>
       <li>Drinking is optional. Never pressure anyone to consume alcohol.</li>
     </ol>
   </section>
-
 </main>
 
 <script src="app.js" defer></script>
