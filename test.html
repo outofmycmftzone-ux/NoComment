@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NO COMMENT - Card Test</title>
+<style>
+body {
+  background: #111;
+  color: #eee;
+  font-family: Arial, sans-serif;
+  padding: 24px;
+  line-height: 1.6;
+}
+h2 { color: #d8b46a; }
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #222;
+  padding: 16px;
+  border-radius: 8px;
+}
+</style>
+</head>
+<body>
+<h2>NO COMMENT — Card Test</h2>
+<p>Checking cards.json...</p>
+<pre id="result">Please wait...</pre>
+
+<script>
+async function testCards() {
+  const output = document.getElementById("result");
+
+  try {
+    const response = await fetch("./cards.json?test=" + Date.now());
+
+    output.textContent = "HTTP status: " + response.status + "\n";
+
+    if (!response.ok) {
+      throw new Error("Could not retrieve cards.json");
+    }
+
+    const raw = await response.text();
+    output.textContent += "Downloaded characters: " + raw.length + "\n\n";
+
+    let data;
+
+    try {
+      data = JSON.parse(raw);
+    } catch (error) {
+      throw new Error("JSON SYNTAX ERROR: " + error.message);
+    }
+
+    output.textContent += "JSON SYNTAX: VALID\n\n";
+    output.textContent += "DECK CHECK:\n";
+
+    for (const deck of ["truth", "dare", "confession", "cross", "punishment"]) {
+      if (!Array.isArray(data[deck])) {
+        output.textContent += deck + ": MISSING OR INVALID\n";
+      } else {
+        output.textContent += deck + ": " + data[deck].length + " cards\n";
+      }
+    }
+
+    output.textContent += "\nRESULT: JSON successfully loaded.";
+  } catch (error) {
+    output.textContent += "\nERROR:\n" + error.message;
+  }
+}
+
+testCards();
+</script>
+</body>
+</html>
