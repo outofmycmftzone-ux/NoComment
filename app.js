@@ -9,9 +9,10 @@ const state = {
   index: 0,
   turn: 1,
   used: {},
-  tokens: new Set(),
+  doubleDownUsedThisTurn: false,
   current: null,
   second: null,
+  doubleDownInProgress: false,
   doubleSuccess: false,
   extraTurn: false,
   extraCardInProgress: false,
@@ -35,9 +36,11 @@ function createPlayer(name) {
     id: crypto.randomUUID(),
     name,
     reward: null,
+    turnsTaken: 0,
     forcedDeck: null,
     pendingExtra: false,
-    pendingDouble: false
+    pendingDouble: false,
+    shielded: false
   };
 }
 
@@ -63,9 +66,11 @@ function loadPlayers() {
           id: player.id || crypto.randomUUID(),
           name: player.name || "Player",
           reward: null,
+          turnsTaken: 0,
           forcedDeck: null,
           pendingExtra: false,
-          pendingDouble: false
+          pendingDouble: false,
+          shielded: false
         };
       });
     }
@@ -131,6 +136,23 @@ function currentPlayer() {
   return state.players[state.index];
 }
 
+function startTurn() {
+  const player = currentPlayer();
+
+  if (!player) return;
+
+  player.turnsTaken++;
+
+  if (
+    player.reward &&
+    player.turnsTaken > player.reward.earnedTurnCount
+  ) {
+    player.reward.ready = true;
+  }
+
+  state.doubleDownUsedThisTurn = false;
+}
+
 function renderTurn() {
   if (!state.players.length) {
     show("setup");
@@ -143,13 +165,6 @@ function renderTurn() {
   $("who").textContent = player.name;
   $("turn").textContent =
     `TURN ${String(state.turn).padStart(2, "0")}`;
-
-  $("tokens").textContent =
-    state.players.length - state.tokens.size;
-
-  if (player.reward && state.turn > player.reward.earnedTurn) {
-    player.reward.ready = true;
-  }
 
   if (player.reward) {
     $("reward-status").textContent = player.reward.ready
@@ -196,10 +211,13 @@ function next() {
 
   state.current = null;
   state.second = null;
+  state.doubleDownInProgress = false;
   state.doubleSuccess = false;
+  state.doubleDownUsedThisTurn = false;
   state.extraCardInProgress = false;
   state.freeDouble = false;
 
+  startTurn();
   renderTurn();
   show("game");
 }
@@ -279,7 +297,10 @@ function drawCard(deck) {
   };
 
   state.second = null;
-  state.doubleSuccess = false;
+
+  if (!state.doubleDownInProgress) {
+    state.doubleSuccess = false;
+  }
 
   renderCard();
   show("card");
@@ -297,11 +318,13 @@ function renderCard() {
     ? `${state.current.text}\n\n— AND THEN —\n\n${state.second.text}`
     : state.current.text;
 
-  const tokenUsed = state.tokens.has(player.id);
   const hasReward = Boolean(player.reward);
 
-  $("double").hidden = tokenUsed || hasReward;
-  $("double").disabled = tokenUsed || hasReward;
+  $("double").hidden =
+    state.doubleDownUsedThisTurn || hasReward;
+
+  $("double").disabled =
+    state.doubleDownUsedThisTurn || hasReward;
 
   $("use-reward").hidden = !(
     player.reward &&
@@ -309,25 +332,13 @@ function renderCard() {
   );
 }
 
-function spendToken() {
-  const player = currentPlayer();
-
-  if (!player || state.tokens.has(player.id) || player.reward) {
-    return false;
-  }
-
-  state.tokens.add(player.id);
-  renderTurn();
-
-  return true;
-}
-
 function drawPunishment() {
   const player = currentPlayer();
 
   if (player.shielded) {
     player.shielded = false;
-    $("penalty").textContent = "Your reward protected you. No punishment this time.";
+    $("penalty").textContent =
+      "Your reward protected you. No punishment this time.";
     show("punishment");
     return;
   }
@@ -387,7 +398,7 @@ function chooseReward(reward) {
 
   player.reward = {
     ...reward,
-    earnedTurn: state.turn,
+    earnedTurnCount: player.turnsTaken,
     ready: false
   };
 
@@ -418,7 +429,7 @@ function finishCard() {
     return;
   }
 
-  if (state.doubleSuccess) {
+  if (state.doubleSuccess && state.second) {
     state.doubleSuccess = false;
     drawRewardChoices();
     return;
@@ -541,7 +552,12 @@ function activateReward() {
   }
 
   if (action === "free_double") {
+    if (state.doubleDownUsedThisTurn) return;
+
+    state.doubleDownUsedThisTurn = true;
+    state.doubleDownInProgress = true;
     state.freeDouble = true;
+
     consumeReward();
     show("double-screen");
     return;
@@ -773,9 +789,10 @@ $("begin").onclick = () => {
 
   state.turn = 1;
   state.used = {};
-  state.tokens.clear();
+  state.doubleDownUsedThisTurn = false;
   state.current = null;
   state.second = null;
+  state.doubleDownInProgress = false;
   state.doubleSuccess = false;
   state.extraTurn = false;
   state.extraCardInProgress = false;
@@ -784,11 +801,14 @@ $("begin").onclick = () => {
 
   state.players.forEach(player => {
     player.reward = null;
+    player.turnsTaken = 0;
     player.forcedDeck = null;
     player.pendingExtra = false;
     player.pendingDouble = false;
     player.shielded = false;
   });
+
+  startTurn();
 
   $("message").textContent = "";
 
@@ -848,20 +868,29 @@ $("use-reward").onclick = activateReward;
 /* DOUBLE DOWN */
 
 $("double").onclick = () => {
-  if (!state.current) return;
+  if (
+    !state.current ||
+    state.doubleDownUsedThisTurn ||
+    currentPlayer().reward
+  ) {
+    return;
+  }
 
-  if (!spendToken()) return;
+  state.doubleDownUsedThisTurn = true;
+  state.doubleDownInProgress = true;
+  state.doubleSuccess = false;
 
-  state.doubleSuccess = true;
   show("double-screen");
 };
 
-$("double-back").onclick = () => show("card");
+$("double-back").onclick = () => {
+  show("card");
+};
 
 /* DRAW A SECOND CARD */
 
 $("double-card").onclick = () => {
-  if (!state.current) return;
+  if (!state.current || !state.doubleDownInProgress) return;
 
   const item = pickCard(
     state.current.deck,
@@ -875,7 +904,8 @@ $("double-card").onclick = () => {
     text: getCardText(item)
   };
 
-  state.doubleSuccess = !state.freeDouble || state.doubleSuccess;
+  state.doubleSuccess = true;
+  state.doubleDownInProgress = false;
   state.freeDouble = false;
 
   renderCard();
