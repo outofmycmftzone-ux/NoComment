@@ -971,7 +971,27 @@ $("penalty-done").onclick = next;
 
 $("skip").onclick = next;
 
-$("use-reward").onclick = activateReward;
+$("use-reward").onclick = async () => {
+  const reward = currentPlayer().reward;
+
+  if (!reward || !reward.ready || !state.current) return;
+
+  const confirmed = await showChoiceModal(
+    reward.name,
+    reward.description,
+    [
+      {
+        label: "USE THIS REWARD",
+        value: true
+      }
+    ],
+    "KEEP REWARD"
+  );
+
+  if (confirmed) {
+    await activateReward();
+  }
+};
 
 /* DOUBLE DOWN */
 
